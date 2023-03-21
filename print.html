@@ -1,0 +1,2008 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Network of Momentum Multi-chain Infrastructure</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/introduction.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/architecture.html"><strong aria-hidden="true">1.1.</strong> Architecture Overview</a></li><li class="chapter-item expanded "><a href="intro/participants.html"><strong aria-hidden="true">1.2.</strong> Participants</a></li><li class="chapter-item expanded "><a href="intro/orbital.html"><strong aria-hidden="true">1.3.</strong> Orbital Program</a></li><li class="chapter-item expanded "><a href="intro/assets.html"><strong aria-hidden="true">1.4.</strong> Assets</a></li></ol></li><li class="chapter-item expanded "><a href="decentralized_bridge/intro.html"><strong aria-hidden="true">2.</strong> Decentralized Bridge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/core_contracts.html"><strong aria-hidden="true">2.1.</strong> Core Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/smart_contracts/intro.html"><strong aria-hidden="true">2.1.1.</strong> EVM Smart Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/smart_contracts/evm/contract.html"><strong aria-hidden="true">2.1.1.1.</strong> EVM Contract</a></li><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/smart_contracts/evm/tests.html"><strong aria-hidden="true">2.1.1.2.</strong> Unit Tests</a></li></ol></li><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/embedded_bridge/contract.html"><strong aria-hidden="true">2.1.2.</strong> Embedded Bridge Contract</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/embedded_bridge/constants.html"><strong aria-hidden="true">2.1.2.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/embedded_bridge/errors.html"><strong aria-hidden="true">2.1.2.2.</strong> Error states</a></li><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/embedded_bridge/api.html"><strong aria-hidden="true">2.1.2.3.</strong> API</a></li><li class="chapter-item expanded "><a href="decentralized_bridge/core_contracts/embedded_bridge/tests.html"><strong aria-hidden="true">2.1.2.4.</strong> Unit Tests</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="decentralized_bridge/orchestrator_layer/intro.html"><strong aria-hidden="true">2.2.</strong> Orchestrator Layer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="decentralized_bridge/orchestrator_layer/connectors.html"><strong aria-hidden="true">2.2.1.</strong> Connectors</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="liquidity/intro.html"><strong aria-hidden="true">3.</strong> Protocol Level Liquidity</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="liquidity/embedded_liquidity/contract.html"><strong aria-hidden="true">3.1.</strong> Liquidity Embedded Contract</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="liquidity/embedded_liquidity/api.html"><strong aria-hidden="true">3.1.1.</strong> API</a></li><li class="chapter-item expanded "><a href="liquidity/embedded_liquidity/constants.html"><strong aria-hidden="true">3.1.2.</strong> Constants</a></li><li class="chapter-item expanded "><a href="liquidity/embedded_liquidity/errors.html"><strong aria-hidden="true">3.1.3.</strong> Errors</a></li><li class="chapter-item expanded "><a href="liquidity/embedded_liquidity/tests.html"><strong aria-hidden="true">3.1.4.</strong> Unit Tests</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Resources</li><li class="chapter-item expanded "><a href="license.html"><strong aria-hidden="true">4.</strong> License</a></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="deployed_contracts.html"><strong aria-hidden="true">6.</strong> Deployed Contracts</a></li><li class="chapter-item expanded "><a href="audits.html"><strong aria-hidden="true">7.</strong> Audits</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> References</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Network of Momentum Multi-chain Infrastructure</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>The <strong>Network of Momentum Multi-chain Infrastructure</strong> is an interoperability solution dedicated for the development of a sustainable, thriving ecosystem. Users are able to frictionlessly swap NoM assets between different blockchain networks through a seamless procedure enabled by user-friendly interfaces. This integration with the wider blockchain ecosystem will simultaneously attract more users (builders, developers, marketers, liquidity providers, etc.) and will also unlock a core component of the Network of Momentum: the Protocol Level Liquidity.</p>
+<p>This documentation is intended to provide users and developers all the necessary information to interact, develop and maintain the Network of Momentum Multi-chain Infrastructure:</p>
+<ul>
+<li><strong>The Decentralized Bridge</strong> to <em>wrap</em> and <em>unwrap</em> native NoM assets</li>
+<li><strong>The Protocol Level Liquidity</strong> that enables the <em>Orbital Program</em></li>
+</ul>
+<p>Both components are covered in the Zenon Improvement Proposal <code>ZIP:sumamu-0001</code>. The complete ZIP can be found <a href="https://forum.zenon.org/t/zip-sumamu-0001-draft/1327">here</a>.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>zip</td><td>ZIP:sumamu-0001</td></tr>
+<tr><td>title</td><td>NoM Multichain infrastructure</td></tr>
+<tr><td>author</td><td>@sumamu @sumoshi</td></tr>
+<tr><td>status</td><td>Draft</td></tr>
+<tr><td>type</td><td>Hard fork</td></tr>
+<tr><td>acceptance</td><td>upon usage by the community</td></tr>
+<tr><td>activation</td><td>upon usage by the community</td></tr>
+<tr><td>created</td><td>2023-03-07</td></tr>
+<tr><td>license</td><td>GPL v3.0</td></tr>
+<tr><td>link</td><td><a href="https://forum.zenon.org/t/zip-sumamu-0001-final/1327">https://forum.zenon.org/t/zip-sumamu-0001-final/1327</a></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-overview"><a class="header" href="#architecture-overview">Architecture Overview</a></h1>
+<p>The whole design architecture of the decentralized cross-chain infrastructure is focused around security considerations.</p>
+<p>The possibility to exchange and swap assets in a trustless, decentralized way between NoM and other networks is conditioned by the existence of a decentralized bridge solution.</p>
+<p>The liquidity embedded in its current form does not have the means to distribute rewards to liquidity providers in a trustless and automated way.</p>
+<p>Not a single centralized entity except the end user is able to move funds and several security mechanisms are organized in a layered structure to prevent and deter malicious actors from exploiting the infrastructure. The TSS participants are only able to sign transactions; they do not have the possibility to move user funds.</p>
+<p>There are three distinct components that will enable a multi-chain vision with Orbital Program at its core:</p>
+<ul>
+<li><strong>The Core Contracts</strong></li>
+<li><strong>The Protocol Level Liquidity</strong></li>
+<li><strong>The Orchestrator Layer</strong></li>
+</ul>
+<p>The <strong>Orchestrator Layer</strong> will enable the relay and data transmissions between networks and will orchestrate the TSS signing ceremonies.</p>
+<p>The <strong>Core Contracts</strong> will verify resulting signatures and interpret incoming events accordingly.</p>
+<p>The <strong>Protocol Level Liquidity</strong> is a stand alone embedded contract that distributes the corresponding fraction of the dual-coin emission to eligible Liquidity Providers.</p>
+<ul>
+<li><strong>On-chain</strong>
+<ul>
+<li>Core Contracts</li>
+<li>Protocol Level Liquidity</li>
+</ul>
+</li>
+<li><strong>Off-chain</strong>
+<ul>
+<li>Orchestrator Layer: Orchestrator nodes based on Pillar nodes that form their own peer-to-peer network. Orchestrator nodes observe the Core Contract on each supported network and produce events that the Core Contracts validate. The orchestrator node will try to sign a confirmed event that was witnessed in the next TSS ceremony. The signing will succeed if there is a super-majority (<code>&gt;66%</code>).</li>
+</ul>
+</li>
+</ul>
+<p>Unlike other bridge architectures, there is no additional peer-to-peer communication needed to confirm the event: each orchestrator node witness and processes all the events locally (after a finality threshold) and a successful TSS signing ceremony represents the off-chain consensus on which events are valid wraps and unwraps.</p>
+<h2 id="modus-operandi"><a class="header" href="#modus-operandi">Modus Operandi</a></h2>
+<p>The decentralized bridge is based on <code>lock-and-release</code> / <code>mint-and-burn</code> mechanisms: native assets are <code>locked</code> / <code>burned</code> on one side and <code>released</code> /<code>minted</code> on the other side.</p>
+<p>This particular interoperability solution allows easy transfers from NoM to other networks. The embedded bridge contract allows the control of native ZTS assets on NoM, while EVM Solidity contracts allow the control of wrapped ZTS assets on EVM compatible chains.</p>
+<p>Depending on the direction of the swap, the following scenarios may appear:</p>
+<ul>
+<li>
+<p>Example native <code>ZNN/wZNN</code> (native <code>ZNN</code> and <code>wZNN</code> as <code>ERC-20</code> token):
+Native <code>ZNN</code> is locked in the bridge embedded contract on NoM and its wrapped representation, <code>wZNN</code> is minted by the Ethereum contract. For the opposite direction, <code>wZNN</code> is burned by the Ethereum smart contract and native <code>ZNN</code> is released by the embedded bridge.</p>
+</li>
+<li>
+<p>Example stablecoin <code>DAI/zDAI</code> (<code>DAI</code> as <code>ERC-20</code> token and <code>zDAI</code> as <code>ZTS</code> token):</p>
+</li>
+</ul>
+<p><code>DAI</code> stablecoin is locked in the Ethereum smart contract, while the bridge embedded contract mints the equivalent amount on NoM. For the opposite direction, <code>zDAI</code> is burned by the embedded contract and <code>ERC-20</code> <code>DAI</code> is released by the Ethereum smart contract.</p>
+<h2 id="compatibility"><a class="header" href="#compatibility">Compatibility</a></h2>
+<p>A robust interoperability solution must also <em>maximize</em> the <em>compatibility</em> with other distributed ledgers. Currently only NoM and EVM networks are supported. Other networks are based on different models and will be supported in the future.</p>
+<h3 id="account-model-compatibility"><a class="header" href="#account-model-compatibility">Account model compatibility</a></h3>
+<h4 id="evm-compatibility"><a class="header" href="#evm-compatibility">EVM compatibility</a></h4>
+<p>The initial phase will consist of an implementation specifically designed for <strong>EVM</strong> compatibility (<em>Ethereum</em>, <em>BNB Smart Chain</em>, etc.):</p>
+<ul>
+<li>Execution compatibility: <code>Ethereum virtual machine</code> (i.e. <code>Solidity</code>)</li>
+<li>Cryptographic compatibility: <code>ECDSA</code> signatures (i.e. <code>secp256k1</code>)</li>
+<li>API compatibility: <code>ETH JSON-RPC</code> (i.e. Ethereum <code>JSON-RPC API</code>)</li>
+</ul>
+<p>This interoperability solution will unlock liquidity from a wide range of both <code>Layer-1</code> and <code>Layer-2</code> <code>EVM</code> compatible networks such as <em>Ethereum</em>, <em>BNB Smart Chain</em>, <em>Polygon</em>, <em>Avalanche</em>, <em>Arbitrum</em>, etc.</p>
+<p>Liquidity pools will be gradually deployed on those networks for the wrapped representations of <code>ZTS</code> assets, enabling a seamless process for users to access and get onboarded into the NoM ecosystem.</p>
+<h4 id="non-evm-compatibility"><a class="header" href="#non-evm-compatibility">Non-EVM compatibility</a></h4>
+<p>In the future, more <strong>non-EVM</strong> networks can be connected by implementing custom integrations (<em>Polkadot</em>, <em>Cosmos</em>, etc.):</p>
+<ul>
+<li>Execution compatibility: Virtual machine type (i.e. <code>WASM</code>)</li>
+<li>Cryptographic compatibility: <code>EdDSA</code> signatures (i.e. <code>Ed25519</code>)</li>
+<li>API compatibility: custom <code>API</code> for each network</li>
+</ul>
+<h3 id="utxo-model-compatibility"><a class="header" href="#utxo-model-compatibility">UTXO model compatibility</a></h3>
+<p>In the next phase, compatibility with <strong>UTXO</strong> networks (<em>Bitcoin</em>, <em>Litecoin</em>, etc.), in particular <em>Bitcoin</em>, is expected to be implemented and rolled-out. Further design changes are necessary for optimal integration with existent <code>BIP340</code>, <code>BIP341</code> (e.g. <code>Schnorr signatures</code> - <code>Musig2</code>, <code>MAST</code>, <code>Tapscript</code>, etc.).</p>
+<h2 id="confirmations-to-finality"><a class="header" href="#confirmations-to-finality">Confirmations to Finality</a></h2>
+<p>Different networks use different consensus protocols with different finality assumptions. In the table below one can find the number confirmations needed for a transaction to become final.</p>
+<p>Orchestrator nodes proceed with the TSS signing ceremony only for finalized cross-chain transactions.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Network Name</th><th style="text-align: left">Network Class</th><th style="text-align: left">Chain identifier</th><th style="text-align: left">Finality</th></tr></thead><tbody>
+<tr><td style="text-align: left">Network of Momentum</td><td style="text-align: left">1</td><td style="text-align: left">1</td><td style="text-align: left">6 momentums</td></tr>
+<tr><td style="text-align: left">Ethereum</td><td style="text-align: left">2</td><td style="text-align: left">1</td><td style="text-align: left"><a href="https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md">1 epoch</a> ~ 6.4 minutes</td></tr>
+<tr><td style="text-align: left">Binance Smart Chain</td><td style="text-align: left">2</td><td style="text-align: left">56</td><td style="text-align: left"><a href="https://www.bnbchain.org/en/blog/bnb-chain-tech-roadmap-2023/">33 seconds (6 secs after fast finality)</a></td></tr>
+<tr><td style="text-align: left">Bitcoin</td><td style="text-align: left">3</td><td style="text-align: left">1</td><td style="text-align: left">6 blocks ~ 60 minutes</td></tr>
+</tbody></table>
+</div>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="participants"><a class="header" href="#participants">Participants</a></h1>
+<p>Network of Momentum Multi-chain Infrastructure has four different type of participants: <code>Guardians</code>, <code>Orchestrator Nodes</code>, <code>Liquidity Providers</code> and the <code>Administration Module</code>.</p>
+<h2 id="guardians"><a class="header" href="#guardians">Guardians</a></h2>
+<p><strong>Guardians</strong> will be elected from <em>prominent</em> members of the community. Their main responsibility is to <em>safeguard</em> the infrastructure in case of an emergency. They will act as <strong>judges</strong> in case of a major failure of the infrastructure and they are responsible to appoint a new admin.</p>
+<h2 id="administration-module"><a class="header" href="#administration-module">Administration Module</a></h2>
+<p>The role of the <strong>administration module</strong> is to <em>manage</em> the infrastructure. It <em>cannot</em> move funds and its permissions are <em>limited</em> in scope. The Core Contracts are designed to be managed by the community members through a <em>governance module</em>, similar to <em>Accelerator-Z</em>. At the moment the governance capabilities of NoM are <em>insufficient</em> to ensure this functionality. Until a solution is developed, the admin will be managed by the <em>maintainers</em> of the codebase.</p>
+<h2 id="orchestrator-nodes"><a class="header" href="#orchestrator-nodes">Orchestrator Nodes</a></h2>
+<p>All the nodes of the <strong>orchestrator layer</strong> will run on <strong>Pillars</strong>. This design decision is based on the consideration that the <em>security</em> of the whole network depends on NoM consensus running nodes. Pillar operators already have both the <em>technical background</em> and <em>know-how</em> to operate nodes and a sufficient stake in the network to responsibly manage this critical piece of infrastructure. Pillars will be able to be part of the orchestrator peer-to-peer layer (<code>libp2p</code>) and participate in the threshold signature (<code>TSS</code>) ceremonies.</p>
+<h2 id="liquidity-provides"><a class="header" href="#liquidity-provides">Liquidity Provides</a></h2>
+<p>Liquidity Provides (<code>LPs</code>) are users with available capital that are incentivized through the <strong>Orbital Program</strong> to directly participate into the network by <em>staking their liquidity</em> in order to receive dual-coin (<code>ZNN</code> and <code>QSR</code>) rewards. They must ensure adequate levels of liquidity for users to be able to frictionlessly swap their assets in and out of the ecosystem.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="orbital-program"><a class="header" href="#orbital-program">Orbital Program</a></h1>
+<p><strong>Orbital Program</strong> is a <strong>protocol level liquidity program</strong> that <strong>incentivizes</strong> liquidity providers to participate and pool together liquidity for the wrapped representations of <code>ZNN</code>, <code>QSR</code> and <code>ZTS</code> tokens in exchange for the aforementioned fraction of the dual-coin emission. This program will create a sustainable model for external liquidity providers to participate into the network.</p>
+<p>Without proper incentives, LPs may lack interest to join the Orbital Program and this in turn will hurt the ecosystem by limiting the potential of external users that would swap their assets to NoM. Moreover, beyond Orbital Program, new untapped markets and gateways to access NoM are necessary for a healthy development of the ecosystem.</p>
+<h2 id="what-is-the-liquidity-embedded-contract"><a class="header" href="#what-is-the-liquidity-embedded-contract">What is the liquidity embedded contract?</a></h2>
+<p>The liquidity embedded contract is the initial placeholder that <strong>accumulates</strong> dual-coin rewards for the upcoming Orbital Program. The liquidity contract was upgraded to enable the Orbital Program and is based on the staking embedded contract.</p>
+<h2 id="how-to-participate-in-the-orbital-program"><a class="header" href="#how-to-participate-in-the-orbital-program">How to participate in the Orbital Program?</a></h2>
+<p>A liquidity provider that wants to participate in the Orbital Program must supply a liquidity pool with the corresponding assets, swap the resulting LP token to NoM and lock it up into the liquidity embedded in order to be <strong>eligible</strong> for dual-coin rewards.</p>
+<p>For example, several Ethereum users wants to become a liquidity providers (LPs). They must deposit <code>ETH</code> and <code>wZNN</code> into a pool in order to participate into the Orbital Program. Depending on how much liquidity they provide for the <code>wZNN/ETH</code> pool on Uniswap, they will receive a proportional amount of <code>ERC-20 LP tokens</code>. In the next step, the LP must swap the <code>ERC-20 LP tokens</code> to the <code>ZTS zLP tokens</code> (<code>zLP</code>) on NoM using the decentralized cross-chain bridge. In order to become eligible for receiving dual-coin rewards from NoM's emission, the LP must deposit the <code>zLP tokens</code> into the liquidity embedded contract. The liquidity embedded contract mirrors the <em>staking embedded contract</em> in terms of <em>locking</em> the tokens for a <em>predefined time period</em>. However, it differs from a rewards' perspective: participating LPs get both <code>ZNN</code> and <code>QSR</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assets"><a class="header" href="#assets">Assets</a></h1>
+<p>The bridge supports native assets as well as tokens from the source and destination networks.</p>
+<h2 id="assets-on-nom"><a class="header" href="#assets-on-nom">Assets on NoM</a></h2>
+<ul>
+<li><code>ZTS</code> = native Zenon Token Standard asset on NoM e.g. Zenon <code>ZNN</code>, Quasar <code>QSR</code></li>
+<li><code>zEVM-20</code> = wrapped Zenon Token Standard asset on NoM e.g. <code>zDAI</code></li>
+</ul>
+<h2 id="assets-on-evm-networks"><a class="header" href="#assets-on-evm-networks">Assets on EVM networks</a></h2>
+<ul>
+<li><code>wZTS</code> = wrapped Zenon Token Standard asset on a particular destination network e.g. <code>wZNN</code> as <code>ERC-20</code></li>
+<li><code>EVM-20</code> = native EVM token on the EVM mainnet e.g. <code>DAI</code> on Ethereum mainnet</li>
+</ul>
+<h2 id="assets-on-non-evm-networks"><a class="header" href="#assets-on-non-evm-networks">Assets on non-EVM networks</a></h2>
+<ul>
+<li>TBA</li>
+</ul>
+<h2 id="assets-on-utxo-networks"><a class="header" href="#assets-on-utxo-networks">Assets on UTXO networks</a></h2>
+<ul>
+<li>TBA</li>
+</ul>
+<h2 id="classification"><a class="header" href="#classification">Classification</a></h2>
+<ul>
+<li>
+<p><code>ZTS</code> and <code>zEVM-20</code> assets are native to <code>NoM</code>.</p>
+</li>
+<li>
+<p><code>EVM-20</code> and <code>wZTS</code> assets are native to the <code>EVM</code> network.</p>
+</li>
+</ul>
+<p>For example, an <code>EVM-20</code> token can be:</p>
+<ul>
+<li><code>ERC-20</code> for Ethereum mainnet</li>
+<li><code>BEP-20</code> for BNB Smart Chain</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="decentralized-bridge"><a class="header" href="#decentralized-bridge">Decentralized Bridge</a></h1>
+<p>The purpose of the <strong>Decentralized Bridge</strong> is to connect different networks by <strong>wrapping</strong> and <strong>unwrapping</strong> assets.</p>
+<p><strong>Decentralized Bridge</strong> components:</p>
+<ol>
+<li>Bridge embedded contract on NoM</li>
+<li>Orchestrator Layer as middleware</li>
+<li>Smart Contracts on bridged network</li>
+</ol>
+<h2 id="evm-account-model"><a class="header" href="#evm-account-model">EVM account model</a></h2>
+<p>At the moment, only <strong>account model EVM networks</strong> are supported, starting with the <em>Ethereum mainnet</em>.</p>
+<h3 id="wrap-assets"><a class="header" href="#wrap-assets">Wrap assets</a></h3>
+<p>Source <em>NoM</em> -&gt; Destination <em>EVM</em></p>
+<ul>
+<li><code>ZNN</code> (<code>ZTS</code> on <em>NoM</em>) -&gt; <strong>wrap</strong> -&gt; <code>wZNN</code> (<code>ERC-20</code> on <em>Ethereum</em>)</li>
+</ul>
+<p>Source <em>EVM</em> -&gt; Destination <em>NoM</em></p>
+<ul>
+<li><code>DAI</code> (<code>ERC-20</code> on <em>Ethereum</em>) -&gt; <strong>wrap</strong> -&gt; <code>zDAI</code> (<code>ZTS</code> on <em>NoM</em>)</li>
+</ul>
+<h3 id="unwrap-assets"><a class="header" href="#unwrap-assets">Unwrap assets</a></h3>
+<p>Source <em>EVM</em> -&gt; Destination <em>NoM</em></p>
+<ul>
+<li><code>wZNN</code> (<code>ERC-20</code> on <em>Ethereum</em>) -&gt; <strong>unwrap</strong> -&gt; <code>ZNN</code> (<code>ZTS</code> on <em>NoM</em>)</li>
+</ul>
+<p>Source <em>NoM</em> -&gt; Destination <em>EVM</em></p>
+<ul>
+<li><code>zDAI</code> (<code>ZTS</code> on <em>NoM</em>) -&gt; <strong>unwrap</strong> -&gt; <code>DAI</code> (<code>ERC-20</code> on <em>Ethereum</em>)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="core-contracts"><a class="header" href="#core-contracts">Core Contracts</a></h1>
+<p>The <strong>Core Contracts</strong> are one of the most important elements of the NoM Multi-chain infrastructure. They are deployed on NoM - the bridge embedded contract and each network that will participate in the multi-chain infrastructure. They are the primary infrastructure contracts, which the Orchestrator Nodes observe and which fundamentally enable the cross-chain communication. In general, Core Contracts have a similar structure and can be broken down to a receiving side, which we'll define later.</p>
+<p>There are <strong>Core Contracts</strong> on each network that is part of the ecosystem, with the <strong>Orchestrator Layer</strong> acting as a global observer of inter-network events.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="evm-smart-contracts"><a class="header" href="#evm-smart-contracts">EVM Smart Contracts</a></h1>
+<p>The EVM smart contracts are specifically designed for <code>Ethereum Virtual Machine</code> compatibility, including its specific <code>secp256k1</code> elliptic curve.</p>
+<p>EVM networks can be divided into <code>layer-1</code> and <code>layer-2</code> networks as follows:</p>
+<p><strong>Layer-1 EVM networks</strong>:</p>
+<p>Integrated networks:</p>
+<ul>
+<li><strong>Ethereum</strong>
+<ul>
+<li>ChainID <code>1</code></li>
+<li>Currency <code>ETH</code></li>
+</ul>
+</li>
+</ul>
+<p>Upcoming integrations:</p>
+<ul>
+<li><strong>BNB Smart Chain</strong>
+<ul>
+<li>ChainID <code>56</code></li>
+<li>Currency <code>BNB</code></li>
+</ul>
+</li>
+<li><strong>Avalanche C-Chain</strong>
+<ul>
+<li>ChainID <code>43114</code></li>
+<li>Currency <code>AVAX</code></li>
+</ul>
+</li>
+<li><strong>Fantom Opera</strong>
+<ul>
+<li>ChainID <code>250</code></li>
+<li>Currency <code>FTM</code></li>
+</ul>
+</li>
+<li><strong>Celo</strong>
+<ul>
+<li>ChainID <code>42220</code></li>
+<li>Currency <code>CELO</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Layer-2 EVM networks</strong>:</p>
+<p>Upcoming integrations:</p>
+<ul>
+<li><strong>Arbitrum</strong>
+<ul>
+<li>ChainID <code>42161</code></li>
+<li>Currency <code>ETH</code></li>
+</ul>
+</li>
+<li><strong>Polygon</strong>
+<ul>
+<li>ChainID <code>137</code></li>
+<li>Currency <code>MATIC</code></li>
+</ul>
+</li>
+<li><strong>Optimism</strong>
+<ul>
+<li>ChainID <code>10</code></li>
+<li>Currency <code>ETH</code></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="evm-smart-contracts-1"><a class="header" href="#evm-smart-contracts-1">EVM Smart Contracts</a></h1>
+<p>The EVM smart contracts are deployed on the EVM networks integrated into the NoM Multi-chain Infrastructure.</p>
+<h2 id="contract-anatomy"><a class="header" href="#contract-anatomy">Contract Anatomy</a></h2>
+<p>The code is written in <code>Solidity v0.8.19</code> (latest as March 2023). </p>
+<h3 id="imports"><a class="header" href="#imports">Imports</a></h3>
+<p>The smart contract uses the following <code>openzeppelin</code> standard contracts:</p>
+<pre><code class="language-js">import &quot;@openzeppelin/contracts/utils/Context.sol&quot;;
+import &quot;@openzeppelin/contracts/token/ERC20/IERC20.sol&quot;;
+import &quot;@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol&quot;;
+import &quot;@openzeppelin/contracts/utils/cryptography/ECDSA.sol&quot;;
+</code></pre>
+<ul>
+<li>
+<p><code>using ECDSA for bytes32</code> - used to add the <code>recover</code> ECDSA signature functionality</p>
+</li>
+<li>
+<p><code>using SafeERC20 for IERC20</code> - used to add the <code>safeTransfer</code> and <code>safeTransferFrom</code> functionalities</p>
+</li>
+<li>
+<p><code>contract Bridge is Context</code> - inherit <code>_msgSender()</code> method to get the sender</p>
+</li>
+</ul>
+<h3 id="modifiers"><a class="header" href="#modifiers">Modifiers</a></h3>
+<ul>
+<li>
+<p><code>onlyAdministrator</code> can only be called by owner of the <code>administrator</code> private key</p>
+</li>
+<li>
+<p><code>isNotHalted</code> can only be called if the bridge is not halted</p>
+</li>
+</ul>
+<h3 id="structs"><a class="header" href="#structs">Structs</a></h3>
+<ul>
+<li>
+<p><code>TokenInfo</code> is used to store information about the bridged tokens</p>
+</li>
+<li>
+<p><code>RedeemInfo</code> is used for redeeming funds and information regarding time challenges</p>
+</li>
+</ul>
+<h3 id="events"><a class="header" href="#events">Events</a></h3>
+<pre><code class="language-js">event RegisteredRedeem(uint256 indexed nonce, address indexed to, address indexed token, uint256 amount);
+event Redeemed(uint256 indexed nonce, address indexed to, address indexed token, uint256 amount);
+event Unwrapped(address indexed from, address indexed token, string to, uint256 amount);
+event Halted();
+event Unhalted();
+event RevokedRedeem(uint256 indexed nonce);
+event PendingAdministrator(address indexed newAdministrator);
+event SetAdministrator(address indexed newAdministrator, address oldAdministrator);
+event PendingTss(address indexed newTss);
+event SetTss(address indexed newTss, address oldTss);
+event PendingGuardians();
+event SetGuardians();
+</code></pre>
+<ul>
+<li>
+<p><code>RegisteredRedeem</code> emitted when a redeem request is registered</p>
+</li>
+<li>
+<p><code>Redeemed</code> emitted when a redeem is completed</p>
+</li>
+<li>
+<p><code>Unwrapped</code> emitted when an unwrap request is registered</p>
+</li>
+<li>
+<p><code>Halted</code> emitted when the bridge is halted</p>
+</li>
+<li>
+<p><code>Unhalted</code> emitted when the bridge is unhalted</p>
+</li>
+<li>
+<p><code>RevokedRedeem</code> emitted when the administrator revokes an invalid redeem</p>
+</li>
+<li>
+<p><code>PendingAdministrator</code> emitted when a request for changing the administrator address is made</p>
+</li>
+<li>
+<p><code>SetAdministrator</code> emitted when the administrator address is set</p>
+</li>
+<li>
+<p><code>PendingTss</code> emitted when a request for changing the tss address is made</p>
+</li>
+<li>
+<p><code>SetTss</code> emitted when the tss address is set</p>
+</li>
+<li>
+<p><code>PendingGuardians</code> emitted when a request for changing the guardian addresses is made</p>
+</li>
+<li>
+<p><code>SetGuardians</code> emitted when the addresses of the guardians are set</p>
+</li>
+</ul>
+<h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
+<ul>
+<li>
+<p><code>uint256 constant uint256max</code> stores <code>type(uint256).max</code></p>
+</li>
+<li>
+<p><code>uint32 private constant networkClass</code> for EVM networks is hard coded to <code>2</code></p>
+</li>
+<li>
+<p><code>uint8 private constant  minNominatedGuardians</code> must coincide with the <code>MinGuardians</code> constant from the embedded contract and is hard coded to <code>5</code></p>
+</li>
+</ul>
+<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
+<ul>
+<li>
+<p><code>estimatedBlockTime</code> is set for each network depending on the block time interval; it is used by the <code>orchestrator</code> to know how much to wait for one confirmation</p>
+</li>
+<li>
+<p><code>confirmationsToFinality</code> is the number of confirmations required to achieve finality for a given network; it is used by the <code>orchestrator</code> to confirm an event</p>
+</li>
+<li>
+<p><code>halted</code> indicates if the bridge is halted or not</p>
+</li>
+<li>
+<p><code>allowKeyGen</code> indicates wether or not the tss address can be changed with a valid signature; the <code>admin</code> can always change the tss address</p>
+</li>
+<li>
+<p><code>administrator</code> is the EVM compatible address of the <code>admin</code></p>
+</li>
+<li>
+<p><code>administratorDelay</code> is the delay required for changing the <code>admin</code>; it cannot be lower than <code>minAdministratorDelay</code></p>
+</li>
+<li>
+<p><code>minAdministratorDelay</code> is the minimum delay required for changing the <code>admin</code></p>
+</li>
+<li>
+<p><code>tss</code> is the TSS address jointly created during the key generation ceremony</p>
+</li>
+<li>
+<p><code>softDelay</code> is the delay required for the time challenge security primitive; it cannot be lower than <code>minSoftDelay</code></p>
+</li>
+<li>
+<p><code>minSoftDelay</code> is the minimum delay required for the time challenge security primitive</p>
+</li>
+<li>
+<p><code>guardians</code> is the array containing the addresses of the guardians</p>
+</li>
+<li>
+<p><code>nominatedGuardians</code> is the array containing the addresses of the nominated guardians</p>
+</li>
+<li>
+<p><code>guardiansVotes</code> is the array containing the votes for the guardians</p>
+</li>
+<li>
+<p><code>votesCount</code> is a mapping containing the proposed <code>admin</code> votes of each guardian</p>
+</li>
+<li>
+<p><code>unhaltedAt</code> is the last block height at which the bridge was unhalted</p>
+</li>
+<li>
+<p><code>unhaltDuration</code> is the duration in blocks during which the bridge is still halted after the <code>unhaltedAt</code> block height; it cannot be lower than <code>minUnhaltDuration</code></p>
+</li>
+<li>
+<p><code>minUnhaltDuration</code> is the minimum duration in blocks during which the bridge is still halted after the <code>unhaltedAt</code> block height</p>
+</li>
+<li>
+<p><code>actionsNonce</code> is the nonce required for a valid signature at a particular state of the bridge; must be always incremented after a signature is validated</p>
+</li>
+<li>
+<p><code>contractDeploymentHeight</code> is the block height at which the contract was deployed; it is used by the <code>orchestrator</code> to know the height to scan events</p>
+</li>
+</ul>
+<h3 id="contract-implementation"><a class="header" href="#contract-implementation">Contract implementation</a></h3>
+<h4 id="constructor"><a class="header" href="#constructor"><code>Constructor</code></a></h4>
+<p>In the constructor we set the following variables:</p>
+<ul>
+<li><code>administrator</code></li>
+<li><code>minUnhaltDuration</code></li>
+<li><code>unhaltDuration</code></li>
+<li><code>minAdministratorDelay</code></li>
+<li><code>administratorDelay</code></li>
+<li><code>minSoftDelay</code></li>
+<li><code>softDelay</code></li>
+<li><code>guardians</code></li>
+<li><code>guardiansVotes</code></li>
+<li><code>estimatedBlockTime</code></li>
+<li><code>confirmationsToFinality</code></li>
+<li><code>contractDeploymentHeight</code></li>
+</ul>
+<h3 id="redeem-method"><a class="header" href="#redeem-method">redeem method</a></h3>
+<p>The first and the second step of the redeem process. During the first step a time challenge will start. During the second step, after <code>softDelay</code>, the funds will be released/minted. The bridge must not be halted, the request must not have been revoked before, the token should be <code>redeemable</code> and the TSS signature valid.</p>
+<h4 id="parameters"><a class="header" href="#parameters">Parameters</a></h4>
+<ul>
+<li><code>to</code> - EVM address that will receive the funds</li>
+<li><code>token</code> - <code>EVM-20</code> token address</li>
+<li><code>amount</code> - amount of token</li>
+<li><code>nonce</code> - unique identifier of the redeem request</li>
+<li><code>signature</code>  - signature generated by the current TSS</li>
+</ul>
+<h4 id="returns"><a class="header" href="#returns">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="unwrap-method"><a class="header" href="#unwrap-method">unwrap method</a></h3>
+<p>Register an unwrap request. Tokens will be locked/burned. The bridge must not be halted and the token must be <code>bridgeable</code>.</p>
+<h4 id="parameters-1"><a class="header" href="#parameters-1">Parameters</a></h4>
+<ul>
+<li><code>token</code> - <code>EVM-20</code> token address</li>
+<li><code>amount</code> - amount of token</li>
+<li><code>to</code> - NoM address</li>
+</ul>
+<h4 id="returns-1"><a class="header" href="#returns-1">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="settokeninfo-method"><a class="header" href="#settokeninfo-method">setTokenInfo method</a></h3>
+<p>Adds or edits an existing <code>tokenInfo</code>. It contains information about permitted tokens to swap or redeem and their delays. Can be called only by the <code>administrator</code>. Guarded by a time challenge.</p>
+<h4 id="parameters-2"><a class="header" href="#parameters-2">Parameters</a></h4>
+<ul>
+<li><code>token</code> - <code>EVM-20</code> token address</li>
+<li><code>minAmount</code> - minimum amount of the token for unwrapping</li>
+<li><code>redeemDelay</code> - delay in blocks after the first redeem step in order to receive the funds</li>
+<li><code>bridgeable</code> - whether the token can be unwrapped</li>
+<li><code>redeemable</code> - whether the token can be redeemed</li>
+<li><code>isOwned</code> - whether this contract has owner rights for the <code>EVM-20</code></li>
+</ul>
+<h4 id="returns-2"><a class="header" href="#returns-2">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="halt-method"><a class="header" href="#halt-method">halt method</a></h3>
+<p>Halts the network. It does not require a signature if called by the <code>administrator</code>. Otherwise, a TSS signature is needed.</p>
+<h4 id="parameters-3"><a class="header" href="#parameters-3">Parameters</a></h4>
+<ul>
+<li><code>signature</code> - current TSS signature</li>
+</ul>
+<h4 id="returns-3"><a class="header" href="#returns-3">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="unhalt-method"><a class="header" href="#unhalt-method">unhalt method</a></h3>
+<p>Sets halted to <code>false</code> and updates the <code>haltedAt</code> block such that <code>unhaltDelay</code> starts. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-4"><a class="header" href="#parameters-4">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-4"><a class="header" href="#returns-4">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="revokeredeems-method"><a class="header" href="#revokeredeems-method">revokeRedeems method</a></h3>
+<p>Revokes invalid redeem requests.</p>
+<h4 id="parameters-5"><a class="header" href="#parameters-5">Parameters</a></h4>
+<ul>
+<li><code>nonces</code> - an array containing the unique identifiers for each request</li>
+</ul>
+<h4 id="returns-5"><a class="header" href="#returns-5">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setadministrator-method"><a class="header" href="#setadministrator-method">setAdministrator method</a></h3>
+<p>Changes the <code>administrator</code> address. Can only be called by the <code>administrator</code>. Guarded by a time challenge.</p>
+<h4 id="parameters-6"><a class="header" href="#parameters-6">Parameters</a></h4>
+<ul>
+<li><code>newAdministrator</code> - <code>new</code> administrator address</li>
+</ul>
+<h4 id="returns-6"><a class="header" href="#returns-6">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="settss-method"><a class="header" href="#settss-method">setTss method</a></h3>
+<p>Changes the TSS address. If called by the <code>administrator</code>, no signature is required and the time challenge starts. Otherwise, a valid TSS signature is required in order to validate the new address.</p>
+<h4 id="parameters-7"><a class="header" href="#parameters-7">Parameters</a></h4>
+<ul>
+<li><code>newTss</code> - <code>new</code> TSS address</li>
+<li><code>oldSignature</code> - signature from the current TSS</li>
+<li><code>newSignature</code> - signature from the new TSS</li>
+</ul>
+<h4 id="returns-7"><a class="header" href="#returns-7">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="emergency-method"><a class="header" href="#emergency-method">emergency method</a></h3>
+<p>Sets administrator to <code>address(0)</code>, TSS to <code>address(0)</code> and halts the bridge. Can only be called by the <code>administrator</code>. It enables <code>guardians</code> to propose.</p>
+<h4 id="parameters-8"><a class="header" href="#parameters-8">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-8"><a class="header" href="#returns-8">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="nominateguardians"><a class="header" href="#nominateguardians">nominateGuardians</a></h3>
+<p>Nominate the <code>guardians</code> that are responsible to propose a new administrator in case of an emergency. Guarded by a time challenge. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-9"><a class="header" href="#parameters-9">Parameters</a></h4>
+<ul>
+<li><code>newGuardians</code> - an array containing the new <code>guardian</code> addresses</li>
+</ul>
+<h4 id="returns-9"><a class="header" href="#returns-9">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="proposeadministrator-method"><a class="header" href="#proposeadministrator-method">proposeAdministrator method</a></h3>
+<p>Will vote for a new <code>administrator</code> address. Can only be called by a <code>guardian</code> only if the bridge is in emergency state (the address of the <code>administrator</code> is <code>address(0)</code>).</p>
+<h4 id="parameters-10"><a class="header" href="#parameters-10">Parameters</a></h4>
+<ul>
+<li><code>newAdministrator</code> - new <code>administrator</code> address</li>
+</ul>
+<h4 id="returns-10"><a class="header" href="#returns-10">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setsoftdelay-method"><a class="header" href="#setsoftdelay-method">setSoftDelay method</a></h3>
+<p>Sets the delay for the time challenge. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-11"><a class="header" href="#parameters-11">Parameters</a></h4>
+<ul>
+<li><code>delay</code> - delay in blocks</li>
+</ul>
+<h4 id="returns-11"><a class="header" href="#returns-11">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setunhaltduration-method"><a class="header" href="#setunhaltduration-method">setUnhaltDuration method</a></h3>
+<p>Sets the delay during which the bridge remains halted after calling <code>unhalt</code>. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-12"><a class="header" href="#parameters-12">Parameters</a></h4>
+<ul>
+<li><code>duration</code> - duration in blocks</li>
+</ul>
+<h4 id="returns-12"><a class="header" href="#returns-12">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setestimatedblocktime-method"><a class="header" href="#setestimatedblocktime-method">setEstimatedBlockTime method</a></h3>
+<p>Sets the delay in which the bridge remains halted after calling <code>unhalt</code>. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-13"><a class="header" href="#parameters-13">Parameters</a></h4>
+<ul>
+<li><code>blockTime</code> - block time in seconds; it is used by the <code>orchestrator</code> layer</li>
+</ul>
+<h4 id="returns-13"><a class="header" href="#returns-13">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setallowkeygen-method"><a class="header" href="#setallowkeygen-method">setAllowKeyGen method</a></h3>
+<p>Sets <code>allowKeyGen</code> to true that permits the TSS address to be changed by an address different from the <code>administrator</code>. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-14"><a class="header" href="#parameters-14">Parameters</a></h4>
+<ul>
+<li><code>value</code> - <code>true</code> or <code>false</code></li>
+</ul>
+<h4 id="returns-14"><a class="header" href="#returns-14">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setconfirmationstofinality-method"><a class="header" href="#setconfirmationstofinality-method">setConfirmationsToFinality method</a></h3>
+<p>Sets the confirmations required by an event to be confirmed. Used by the <code>orchestrator</code> layer. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-15"><a class="header" href="#parameters-15">Parameters</a></h4>
+<ul>
+<li><code>confirmations</code> - number of confirmations in blocks</li>
+</ul>
+<h4 id="returns-15"><a class="header" href="#returns-15">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unit-tests"><a class="header" href="#unit-tests">Unit Tests</a></h1>
+<p>TBA</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bridge-embedded-contract"><a class="header" href="#bridge-embedded-contract">Bridge Embedded Contract</a></h1>
+<p>The <strong>Bridge Embedded Contract</strong> is the embedded contract for the <strong>decentralized bridge</strong> deployed on the Network of Momentum.</p>
+<h2 id="helper-methods"><a class="header" href="#helper-methods">Helper methods</a></h2>
+<h3 id="checkecdsasignature-method"><a class="header" href="#checkecdsasignature-method"><code>CheckECDSASignature</code> method</a></h3>
+<p>Checks if the ECDSA signature is correct or returns <code>error</code> in case it fails.</p>
+<h4 id="parameters-16"><a class="header" href="#parameters-16">Parameters</a></h4>
+<ul>
+<li><code>message</code> - the message in <code>[]byte</code> format</li>
+<li><code>pubKeyStr</code> - the public key in <code>string</code> format</li>
+<li><code>signatureStr</code> - the signature in <code>string</code> format</li>
+</ul>
+<h4 id="returns-16"><a class="header" href="#returns-16">Returns</a></h4>
+<ul>
+<li><code>bool</code> - <code>true</code> if the signature passes, <code>false</code> otherwise</li>
+</ul>
+<h3 id="canperformaction-method"><a class="header" href="#canperformaction-method"><code>CanPerformAction</code> method</a></h3>
+<p>Checks if the parameters of the bridge are correct or returns <code>error</code> in case it fails.</p>
+<h4 id="parameters-17"><a class="header" href="#parameters-17">Parameters</a></h4>
+<ul>
+<li><code>AccountVmContext</code> - current context of the VM</li>
+</ul>
+<h4 id="returns-17"><a class="header" href="#returns-17">Returns</a></h4>
+<ul>
+<li><code>BridgeInfoVariable</code> - information regarding the bridge</li>
+<li><code>OrchestratorInfo</code> - information regarding the orchestrator</li>
+</ul>
+<h3 id="checkbridgeinitialized-method"><a class="header" href="#checkbridgeinitialized-method"><code>CheckBridgeInitialized</code> method</a></h3>
+<p>Checks if the bridge is properly initialized or returns <code>error</code> in case it fails.</p>
+<h4 id="parameters-18"><a class="header" href="#parameters-18">Parameters</a></h4>
+<ul>
+<li><code>AccountVmContext</code> - current context of the VM</li>
+</ul>
+<h4 id="returns-18"><a class="header" href="#returns-18">Returns</a></h4>
+<ul>
+<li><code>BridgeInfoVariable</code> - information regarding the bridge</li>
+</ul>
+<h3 id="checkorchestratorinfoinitialized-method"><a class="header" href="#checkorchestratorinfoinitialized-method"><code>CheckOrchestratorInfoInitialized</code> method</a></h3>
+<p>Checks if the orchestrator is properly initialized or returns <code>error</code> in case it fails.</p>
+<h4 id="parameters-19"><a class="header" href="#parameters-19">Parameters</a></h4>
+<ul>
+<li><code>AccountVmContext</code> - current context of the VM</li>
+</ul>
+<h4 id="returns-19"><a class="header" href="#returns-19">Returns</a></h4>
+<ul>
+<li><code>OrchestratorInfo</code> - information regarding the orchestrator</li>
+</ul>
+<h3 id="checkbridgehalted-method"><a class="header" href="#checkbridgehalted-method"><code>CheckBridgeHalted</code> method</a></h3>
+<p>Checks if the bridge is halted or returns <code>error</code> in case it fails.</p>
+<h4 id="parameters-20"><a class="header" href="#parameters-20">Parameters</a></h4>
+<ul>
+<li><code>BridgeInfoVariable</code> - information regarding the bridge</li>
+<li><code>AccountVmContext</code> - current context of the VM</li>
+</ul>
+<h4 id="returns-20"><a class="header" href="#returns-20">Returns</a></h4>
+<ul>
+<li><code>nil</code> - the bridge is not halted</li>
+</ul>
+<h2 id="contract-implementation-1"><a class="header" href="#contract-implementation-1">Contract implementation</a></h2>
+<p>The implementation of the <strong>Bridge Embedded Contract</strong> has a total of 20 methods that can be called by sending a specifically crafted account block:</p>
+<h3 id="wraptokenmethod-method"><a class="header" href="#wraptokenmethod-method"><code>WrapTokenMethod</code> method</a></h3>
+<p>Method for wrapping assets. If the bridge is initialized, not halted, the destination network and the token pair exists, than a wrap token request is created.</p>
+<h4 id="parameters-21"><a class="header" href="#parameters-21">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - the class of the destination network</li>
+<li><code>ChainId</code> - the chain identifier of the destination network</li>
+<li><code>ToAddress</code> - the address that can redeem the funds on the destination network</li>
+<li><code>TokenStandard</code> - the <code>ZTS</code> used in the <code>send</code> block</li>
+<li><code>Amount</code> - the amount used in the <code>send</code> block</li>
+</ul>
+<h4 id="returns-21"><a class="header" href="#returns-21">Returns</a></h4>
+<ul>
+<li><code>AccountBlock</code> - only if the token is owned, a burn call to the token contract is performed that burns the received tokens</li>
+</ul>
+<h3 id="updatewraprequestmethod-method"><a class="header" href="#updatewraprequestmethod-method"><code>UpdateWrapRequestMethod</code> method</a></h3>
+<p>Method for updating the wrap request. If the <code>signature</code> is valid and is generated by the TSS public key, it is saved in the wrap request signature field and can be used to redeem the funds.</p>
+<h4 id="parameters-22"><a class="header" href="#parameters-22">Parameters</a></h4>
+<ul>
+<li><code>Id</code> - represents the id of a wrap requests</li>
+<li><code>Signature</code> - a base64 encoded ECDSA signature used to redeem funds on the destination network</li>
+</ul>
+<h4 id="returns-22"><a class="header" href="#returns-22">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="unwraptokenmethod-method"><a class="header" href="#unwraptokenmethod-method"><code>UnwrapTokenMethod</code> method</a></h3>
+<p>Method for unwrapping assets. It is the first step in redeeming funds on NoM. Normally this method would be called by an <code>orchestrator</code> node after a signing ceremony to register an unwrap request.</p>
+<h4 id="parameters-23"><a class="header" href="#parameters-23">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - the class of the source network</li>
+<li><code>ChainId</code> - the chain identifier of the source network</li>
+<li><code>TransactionHash</code> - hash of the transaction on the source network</li>
+<li><code>LogIndex</code> - log index in the block of the transaction that locked/burned the funds on the source network; together with <code>txHash</code> it creates a unique identifier for a transaction</li>
+<li><code>ToAddress</code> - destination NoM address</li>
+<li><code>TokenAddress</code> - address of the locked/burned token on the source network</li>
+<li><code>Amount</code> - amount of token that was locked/burned</li>
+<li><code>Signature</code> - the signature as <code>base64</code> encoded string of the unwrap request</li>
+</ul>
+<h4 id="returns-23"><a class="header" href="#returns-23">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setnetworkmethod-method"><a class="header" href="#setnetworkmethod-method"><code>SetNetworkMethod</code> method</a></h3>
+<p>Method for setting a network. Used to add or edit an already existing bridged network.</p>
+<h4 id="parameters-24"><a class="header" href="#parameters-24">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - class of the network</li>
+<li><code>ChainId</code>- chain identifier of the network</li>
+<li><code>Name</code>- <code>new</code> name of the network</li>
+<li><code>ContractAddress</code> - <code>new</code> address the bridge contract was deployed to</li>
+<li><code>Metadata</code> - <code>JSON</code> encoded string used in case the <code>orchestrator</code> needs additional data for the network</li>
+</ul>
+<h4 id="returns-24"><a class="header" href="#returns-24">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="removenetworkmethod-method"><a class="header" href="#removenetworkmethod-method"><code>RemoveNetworkMethod</code> method</a></h3>
+<p>Method for removing a network uniquely identified by its class and chain identifier.</p>
+<h4 id="parameters-25"><a class="header" href="#parameters-25">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - class of the network</li>
+<li><code>ChainId</code>- chain identifier of the network</li>
+</ul>
+<h4 id="returns-25"><a class="header" href="#returns-25">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setnetworkmetadatamethod-method"><a class="header" href="#setnetworkmetadatamethod-method"><code>SetNetworkMetadataMethod</code> method</a></h3>
+<p>Method for setting metadata for a network.</p>
+<h4 id="parameters-26"><a class="header" href="#parameters-26">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - class of the network</li>
+<li><code>ChainId</code>- chain identifier of the network</li>
+<li><code>Metadata</code> - <code>JSON</code> encoded string containing the <code>new</code> metadata</li>
+</ul>
+<h4 id="returns-26"><a class="header" href="#returns-26">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="settokenpairmethod-method"><a class="header" href="#settokenpairmethod-method"><code>SetTokenPairMethod</code> method</a></h3>
+<p>Method for setting a token pair for a network. It will add a new pair or edit an existing one; guarded by the time challenge primitive.</p>
+<h4 id="parameters-27"><a class="header" href="#parameters-27">Parameters</a></h4>
+<ul>
+<li>NetworkClass - network class of the network to add this pair to</li>
+<li>ChainId - chain identifier of the network to add this pair to</li>
+<li>TokenStandard - first component of the pair i.e. <code>ZTS</code></li>
+<li>TokenAddress - second component of the pair i.e. <code>EVM-20</code></li>
+<li><code>Bridgeable</code> - boolean variable that specifies if the <code>ZTS</code> can be wrapped on NoM</li>
+<li><code>Redeemable</code> - boolean variable that specifies if the <code>EVM-20</code> can be redeemed on NoM</li>
+<li><code>Owned</code> - boolean variable that specifies if the embedded bridge contract is the owner of the <code>ZTS</code> from the pair; if true, when wrapping the ZTS, the token will be burned, otherwise it will be locked</li>
+<li><code>MinAmount</code> - minimum amount for wrapping the <code>ZTS</code></li>
+<li><code>FeePercentage</code> - fee deducted from the amount when wrapping</li>
+<li><code>RedeemDelay</code> - delay in momentums until redeeming is possible on NoM</li>
+<li><code>Metadata</code> - <code>JSON</code> encoded string containing metadata about the pair; used by the <code>orchestrator</code></li>
+</ul>
+<h4 id="returns-27"><a class="header" href="#returns-27">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="removetokenpairmethod-method"><a class="header" href="#removetokenpairmethod-method"><code>RemoveTokenPairMethod</code> method</a></h3>
+<p>Method for removing a token pair for a network.</p>
+<h4 id="parameters-28"><a class="header" href="#parameters-28">Parameters</a></h4>
+<ul>
+<li><code>NetworkClass</code> - class of the network that contains the pair</li>
+<li><code>ChainId</code> - chain identifier of the network that contains the pair</li>
+<li><code>TokenStandard</code> - <code>ZTS</code> of the pair</li></li>
+<li><code>TokenAddress</code> - <code>EVM-20</code> address of the pair</li>
+</ul>
+<h4 id="returns-28"><a class="header" href="#returns-28">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="haltmethod-method"><a class="header" href="#haltmethod-method"><code>HaltMethod</code> method</a></h3>
+<p>Method for halting the bridge. If called by the <code>administrator</code> it doesn't need a <code>signature</code>, otherwise it needs a TSS signature with the current <code>tssNonce</code>.</p>
+<h4 id="parameters-29"><a class="header" href="#parameters-29">Parameters</a></h4>
+<ul>
+<li><code>Signature</code> - <code>base64</code> encoded string containing the TSS signature</li>
+</ul>
+<h4 id="returns-29"><a class="header" href="#returns-29">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="unhaltmethod-method"><a class="header" href="#unhaltmethod-method"><code>UnhaltMethod</code> method</a></h3>
+<p>Method for unhalting the bridge. Can be called only by the <code>administrator</code>.</p>
+<h4 id="parameters-30"><a class="header" href="#parameters-30">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-30"><a class="header" href="#returns-30">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="emergencymethod-method"><a class="header" href="#emergencymethod-method"><code>EmergencyMethod</code> method</a></h3>
+<p>Method for putting the bridge embedded contract into emergency mode. This method nullifies the <code>administrator</code> address, tss public key and halts the bridge. It can be called in the extreme case when the <code>administrator</code> private key has been compromised.</p>
+<h4 id="parameters-31"><a class="header" href="#parameters-31">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-31"><a class="header" href="#returns-31">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="changetssecdsapubkeymethod-method"><a class="header" href="#changetssecdsapubkeymethod-method"><code>ChangeTssECDSAPubKeyMethod</code> method</a></h3>
+<p>Method for changing the TSS public key. Guarded by time challenge when called by the <code>administrator</code>. Otherwise it can be changed by the TSS using a signature from the current tss, one from the new tss and the new tss public key.</p>
+<h4 id="parameters-32"><a class="header" href="#parameters-32">Parameters</a></h4>
+<ul>
+<li><code>PubKey</code> - <code>base64</code> encoded string representing the new TSS public key</li>
+<li><code>OldPubKeySignature</code> - <code>base64</code> encoded string representing the <code>changeTss</code> message signed by the current TSS</li>
+<li><code>NewPubKeySignature</code> - <code>base64</code> encoded string representing the <code>changeTss</code> message signed by corresponding private key</li>
+</ul>
+<h4 id="returns-32"><a class="header" href="#returns-32">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="changeadministratormethod-method"><a class="header" href="#changeadministratormethod-method"><code>ChangeAdministratorMethod</code> method</a></h3>
+<p>Method for changing the admin. Can be called only by the <code>administrator</code>. Guarded by a time challenge with <code>administratorDelay</code>.</p>
+<h4 id="parameters-33"><a class="header" href="#parameters-33">Parameters</a></h4>
+<ul>
+<li><code>Address</code> - address of the new <code>administrator</code></li>
+</ul>
+<h4 id="returns-33"><a class="header" href="#returns-33">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setallowkeygenmethod-method"><a class="header" href="#setallowkeygenmethod-method"><code>SetAllowKeygenMethod</code> method</a></h3>
+<p>Method that enables or disables the TSS key generation.</p>
+<h4 id="parameters-34"><a class="header" href="#parameters-34">Parameters</a></h4>
+<ul>
+<li><code>Bool</code> - <code>true</code> or <code>false</code> value that indicates whether the <code>orchestrator</code> nodes should start a key generation ceremony or not</li>
+</ul>
+<h4 id="returns-34"><a class="header" href="#returns-34">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setorchestratorinfomethod-method"><a class="header" href="#setorchestratorinfomethod-method"><code>SetOrchestratorInfoMethod</code> method</a></h3>
+<p>Method for setting the information regarding the orchestrator layer.</p>
+<h4 id="parameters-35"><a class="header" href="#parameters-35">Parameters</a></h4>
+<ul>
+<li><code>WindowSize</code> - size in momentums of a window used in the <code>orchestrator</code> to determine which signing ceremony should occur, wrap or unwrap request and to determine the key sign ceremony timeout</li>
+<li><code>KeyGenThreshold</code> - minimum number of participants of a key generation ceremony</li>
+<li><code>ConfirmationsToFinality</code> - minimum number of momentums to consider a wrap request confirmed</li>
+<li><code>EstimatedMomentumTime</code> - time in seconds between momentums</li>
+</ul>
+<h4 id="returns-35"><a class="header" href="#returns-35">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setbridgemetadatamethod-method"><a class="header" href="#setbridgemetadatamethod-method"><code>SetBridgeMetadataMethod</code> method</a></h3>
+<p>Method for setting the metadata for the bridge.</p>
+<h4 id="parameters-36"><a class="header" href="#parameters-36">Parameters</a></h4>
+<ul>
+<li><code>String</code> - <code>JSON</code> encoded string containing additional information needed for the <code>orchestrator</code> layer</li>
+</ul>
+<h4 id="returns-36"><a class="header" href="#returns-36">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="revokeunwraprequestmethod-method"><a class="header" href="#revokeunwraprequestmethod-method"><code>RevokeUnwrapRequestMethod</code> method</a></h3>
+<p>Method for revoking an unwrap request. This should be called if an unwrap request does not a have corresponding transaction on the source network that locks/burns the tokens.</p>
+<h4 id="parameters-37"><a class="header" href="#parameters-37">Parameters</a></h4>
+<ul>
+<li><code>TransactionHash</code> - first component to uniquely identify an unwrap request</li>
+<li><code>LogIndex</code> - second component to uniquely identify an unwrap request</li>
+</ul>
+<h4 id="returns-37"><a class="header" href="#returns-37">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="redeemmethod-method"><a class="header" href="#redeemmethod-method"><code>RedeemMethod</code> method</a></h3>
+<p>Method for redeeming assets. It is the second step in order to redeem funds after an unwrap request is created. In order to redeem the unwrap request the following conditions must be present: the bridge must not be halted, the network and token pair must exist and the request have not been redeemed or revoked before.</p>
+<h4 id="parameters-38"><a class="header" href="#parameters-38">Parameters</a></h4>
+<ul>
+<li><code>TransactionHash</code> - first component to uniquely identify an unwrap request</li>
+<li><code>LogIndex</code> - second component to uniquely identify an unwrap request</li>
+</ul>
+<h4 id="returns-38"><a class="header" href="#returns-38">Returns</a></h4>
+<ul>
+<li><code>AccountBlock</code> - if the <code>ZTS</code> to be redeemed is owned, an account block to mint the amount will be sent to the token contract, otherwise a block sending the tokens will be sent to the user</li>
+</ul>
+<h3 id="nominateguardiansmethod-method"><a class="header" href="#nominateguardiansmethod-method"><code>NominateGuardiansMethod</code> method</a></h3>
+<p>Method for nominating guardians. Can only be called by the <code>administrator</code> in order to propose new <code>guardians</code>. Guarded by a time challenge. The number of guardian addresses must be higher than <code>minGuardians</code> and each address in the array must be unique. <code>ZeroAddress</code> is not accepted.</p>
+<h4 id="parameters-39"><a class="header" href="#parameters-39">Parameters</a></h4>
+<ul>
+<li><code>[]Address</code> - contains the new guardian addresses</li>
+</ul>
+<h4 id="returns-39"><a class="header" href="#returns-39">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="proposeadministratormethod-method"><a class="header" href="#proposeadministratormethod-method"><code>ProposeAdministratorMethod</code> method</a></h3>
+<p>Method for proposing an admin. This method can only be called by a <code>guardian</code> if the bridge is in emergency mode i.e. the administrator address is set to <code>ZeroAddress</code>. After each <code>guardian</code> votes for an address, the votes are counted and if there is a majority (<code>50% + 1</code>), the <code>administrator</code> will be set with that address.</p>
+<h4 id="parameters-40"><a class="header" href="#parameters-40">Parameters</a></h4>
+<ul>
+<li><code>Address</code> - voted address</li>
+</ul>
+<h4 id="returns-40"><a class="header" href="#returns-40">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bridge-embedded-constants"><a class="header" href="#bridge-embedded-constants">Bridge Embedded Constants</a></h1>
+<p><a href="https://github.com/HyperCore-Team/go-zenon/blob/vm/constants/embedded.go">Bridge constants</a> are hard coded into the <code>embedded.go</code> file as network constants.</p>
+<ul>
+<li>
+<p><code>InitialBridgeAdministrator</code> is the hard-coded address for the administration module, managed by the maintainers of the codebase as <code>Address</code></p>
+</li>
+<li>
+<p><code>MaximumFee</code> is the maximum fee for a wrap request as <code>uint32</code>; equivalent to <code>100%</code> fee</p>
+</li>
+<li>
+<p><code>MinUnhaltDurationInMomentums</code> is the minimum amount of time, measured in momentums, until the bridge functionality is restored from a halted state as <code>uint64</code></p>
+</li>
+<li>
+<p><code>MinAdministratorDelay</code> is the minimum delay required by the <code>time challenge</code> for <code>admin</code> operations as <code>uint64</code></p>
+</li>
+<li>
+<p><code>MinSoftDelay</code> is the minimum delay required by <code>time challenge</code> for all operations excluding the <code>admin</code> and the <code>guardians</code> as <code>uint64</code></p>
+</li>
+<li>
+<p><code>MinGuardians</code> is the minimum number of guardians required for the bridge to become operational as <code>unit32</code></p>
+</li>
+<li>
+<p><code>DecompressedECDSAPubKeyLength</code> is the size of the decompressed <code>ECDSA</code> public key in <code>bytes</code></p>
+</li>
+<li>
+<p><code>CompressedECDSAPubKeyLength</code>is the size of the compressed <code>ECDSA</code> public key in <code>bytes</code></p>
+</li>
+<li>
+<p><code>ECDSASignatureLength</code> is the size of the <code>ECDSA</code> signature in <code>bytes</code></p>
+</li>
+<li>
+<p><code>EdDSAPubKeyLength</code> is the size of the <code>EdDSA</code> public key in <code>bytes</code></p>
+</li>
+</ul>
+<pre><code class="language-go">InitialBridgeAdministrator   = types.ParseAddressPanic(&quot;z1qz8q0x3rs36z2kw8eltf8r323hlcn64jnujkuz&quot;)
+MaximumFee                   = uint32(10000)
+MinUnhaltDurationInMomentums = uint64(6 * MomentumsPerHour) //main net
+MinAdministratorDelay        = uint64(2 * MomentumsPerEpoch) // main net
+MinSoftDelay                 = uint64(MomentumsPerEpoch)     // main net
+MinGuardians                 = 5
+DecompressedECDSAPubKeyLength = 65
+CompressedECDSAPubKeyLength   = 33
+ECDSASignatureLength          = 65
+EdDSAPubKeyLength             = 32
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bridge-embedded-error-states"><a class="header" href="#bridge-embedded-error-states">Bridge Embedded Error States</a></h1>
+<p><a href="https://github.com/HyperCore-Team/go-zenon/blob/vm/constants/errors.go">Bridge error states</a>.</p>
+<pre><code class="language-go">ErrUnknownNetwork                       = errors.New(&quot;unknown network&quot;)
+ErrInvalidToAddress                     = errors.New(&quot;invalid destination address&quot;)
+ErrBridgeNotInitialized                 = errors.New(&quot;bridge info is not initialized&quot;)
+ErrOrchestratorNotInitialized           = errors.New(&quot;orchestrator info is not initialized&quot;)
+ErrTokenNotBridgeable                   = errors.New(&quot;token not bridgeable&quot;)
+ErrNotGuardian                          = errors.New(&quot;sender is not a guardian&quot;)
+ErrTokenNotRedeemable                   = errors.New(&quot;token not redeemable&quot;)
+ErrBridgeHalted                         = errors.New(&quot;bridge is halted&quot;)
+ErrInvalidRedeemPeriod                  = errors.New(&quot;invalid redeem period&quot;)
+ErrInvalidRedeemRequest                 = errors.New(&quot;invalid request&quot;)
+ErrInvalidTransactionHash               = errors.New(&quot;invalid transaction hash&quot;)
+ErrInvalidNetworkName                   = errors.New(&quot;invalid network name&quot;)
+ErrInvalidContractAddress               = errors.New(&quot;invalid contract address&quot;)
+ErrInvalidToken                         = errors.New(&quot;invalid token standard or token address&quot;)
+ErrTokenNotFound                        = errors.New(&quot;token not found&quot;)
+ErrInvalidEDDSASignature                = errors.New(&quot;invalid ed25519 signature&quot;)
+ErrInvalidEDDSAPubKey                   = errors.New(&quot;invalid eddsa public key&quot;)
+ErrInvalidECDSASignature                = errors.New(&quot;invalid secp256k1 signature&quot;)
+ErrInvalidDecompressedECDSAPubKeyLength = errors.New(&quot;invalid decompressed secp256k1 public key length&quot;)
+ErrInvalidCompressedECDSAPubKeyLength   = errors.New(&quot;invalid compressed secp256k1 public key length&quot;)
+ErrNotAllowedToChangeTss                = errors.New(&quot;changing the tss public key is not allowed&quot;)
+ErrInvalidJsonContent                   = errors.New(&quot;metadata does not respect the JSON format&quot;)
+ErrInvalidMinAmount                     = errors.New(&quot;invalid min amount&quot;)
+ErrTimeChallengeNotDue                  = errors.New(&quot;time challenge not due&quot;)
+ErrNotEmergency                         = errors.New(&quot;bridge not in emergency&quot;)
+ErrInvalidGuardians                     = errors.New(&quot;invalid guardians&quot;)
+ErrSecurityNotInitialized               = errors.New(&quot;security not initialized&quot;)
+ErrBridgeNotHalted                      = errors.New(&quot;bridge not halted&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bridge-embedded-json-rpc-api"><a class="header" href="#bridge-embedded-json-rpc-api">Bridge Embedded JSON-RPC API</a></h1>
+<p>The <code>JSON-RPC API</code> for the bridge embedded contract.</p>
+<h2 id="json-rpc-api-methods"><a class="header" href="#json-rpc-api-methods">JSON-RPC API Methods</a></h2>
+<h3 id="getbridgeinfo-method"><a class="header" href="#getbridgeinfo-method"><code>GetBridgeInfo</code> method</a></h3>
+<p>Returns the current bridge information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-41"><a class="header" href="#parameters-41">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-41"><a class="header" href="#returns-41">Returns</a></h4>
+<ul>
+<li><code>BridgeInfoVariable</code> - the current bridge information</li>
+</ul>
+<pre><code class="language-go">type BridgeInfoVariable struct {
+	// Administrator address
+	Administrator types.Address `json:&quot;administrator&quot;`
+	// ECDSA pub key generated by the orchestrator from key gen ceremony
+	CompressedTssECDSAPubKey   string `json:&quot;compressedTssECDSAPubKey&quot;`
+	DecompressedTssECDSAPubKey string `json:&quot;decompressedTssECDSAPubKey&quot;`
+	// This specifies whether the orchestrator should key gen or not
+	AllowKeyGen bool `json:&quot;allowKeyGen&quot;`
+	// This specifies whether the bridge is halted or not
+	Halted bool `json:&quot;halted&quot;`
+	// Height at which the administrator called unhalt method, UnhaltDurationInMomentums starts from here
+	UnhaltedAt uint64 `json:&quot;unhaltedAt&quot;`
+	// After we call the unhalt embedded method, the bridge will still be halted for UnhaltDurationInMomentums momentums
+	UnhaltDurationInMomentums uint64 `json:&quot;unhaltDurationInMomentums&quot;`
+	// An incremental nonce used for signing messages
+	TssNonce uint64 `json:&quot;tssNonce&quot;`
+	// Additional metadata
+	Metadata string `json:&quot;metadata&quot;`
+}
+</code></pre>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getsecurityinfo-method"><a class="header" href="#getsecurityinfo-method"><code>GetSecurityInfo</code> method</a></h3>
+<p>Returns the current security information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-42"><a class="header" href="#parameters-42">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-42"><a class="header" href="#returns-42">Returns</a></h4>
+<ul>
+<li><code>SecurityInfoVariable</code> - the current security information</li>
+</ul>
+<pre><code class="language-go">// SecurityInfoVariable This refers to time challenge security
+type SecurityInfoVariable struct {
+	// addresses that can vote for the new administrator once the bridge is in emergency
+	Guardians []types.Address `json:&quot;guardians&quot;`
+	// votes of the active guardians
+	GuardiansVotes []types.Address `json:&quot;guardiansVotes&quot;`
+	// delay upon which the new administrator or guardians will be active
+	AdministratorDelay uint64 `json:&quot;administratorDelay&quot;`
+	// delay upon which all other time challenges will expire
+	SoftDelay uint64 `json:&quot;softDelay&quot;`
+}
+</code></pre>
+<h4 id="example-1"><a class="header" href="#example-1">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getorchestratorinfo-method"><a class="header" href="#getorchestratorinfo-method"><code>GetOrchestratorInfo</code> method</a></h3>
+<p>Returns the current orchestrator information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-43"><a class="header" href="#parameters-43">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-43"><a class="header" href="#returns-43">Returns</a></h4>
+<ul>
+<li><code>OrchestratorInfo</code> - the current orchestrator information</li>
+</ul>
+<pre><code class="language-go">type OrchestratorInfo struct {
+	// Momentums period in which only one signing ceremony (wrap or unwrap) can occur in the orchestrator
+	WindowSize uint64 `json:&quot;windowSize&quot;`
+	// This variable is used in the orchestrator to wait for at least KeyGenThreshold participants for a key gen ceremony
+	KeyGenThreshold uint32 `json:&quot;keyGenThreshold&quot;`
+	// Momentums until orchestrator can process wrap requests
+	ConfirmationsToFinality uint32 `json:&quot;confirmationsToFinality&quot;`
+	// Momentum time
+	EstimatedMomentumTime uint32 `json:&quot;estimatedMomentumTime&quot;`
+	// This variable is a reference for the orchestrator to check the last 24h of momentums for producing pillars
+	AllowKeyGenHeight uint64 `json:&quot;allowKeyGenHeight&quot;`
+}
+</code></pre>
+<h4 id="example-2"><a class="header" href="#example-2">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="gettimechallengesinfo-method"><a class="header" href="#gettimechallengesinfo-method"><code>GetTimeChallengesInfo</code> method</a></h3>
+<p>Returns a list of time challenges or <code>error</code> in case it fails.</p>
+<h4 id="parameters-44"><a class="header" href="#parameters-44">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-44"><a class="header" href="#returns-44">Returns</a></h4>
+<ul>
+<li><code>TimeChallengesList</code> - the current a list of time challenges</li>
+</ul>
+<pre><code class="language-go">type TimeChallengesList struct {
+	Count int                             `json:&quot;count&quot;`
+	List  []*definition.TimeChallengeInfo `json:&quot;list&quot;`
+}
+</code></pre>
+<pre><code class="language-go">type TimeChallengeInfo struct {
+	MethodName           string
+	ParamsHash           types.Hash
+	ChallengeStartHeight uint64
+}
+</code></pre>
+<h4 id="example-3"><a class="header" href="#example-3">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getnetworkinfo-method"><a class="header" href="#getnetworkinfo-method"><code>GetNetworkInfo</code> method</a></h3>
+<p>Returns the current network information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-45"><a class="header" href="#parameters-45">Parameters</a></h4>
+<ul>
+<li><code>networkClass</code> - network class in <code>uint32</code> format</li>
+<li><code>chainId</code> - chain identifier in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-45"><a class="header" href="#returns-45">Returns</a></h4>
+<ul>
+<li><code>NetworkInfo</code> - the current network information.</li>
+</ul>
+<pre><code class="language-go">// NetworkInfoVariable One network will always be znn, so we just need the other one
+type NetworkInfoVariable struct {
+	NetworkClass    uint32   `json:&quot;networkClass&quot;`
+	Id              uint32   `json:&quot;chainId&quot;`
+	Name            string   `json:&quot;name&quot;`
+	ContractAddress string   `json:&quot;contractAddress&quot;`
+	Metadata        string   `json:&quot;metadata&quot;`
+	TokenPairs      [][]byte `json:&quot;tokenPairs&quot;`
+}
+</code></pre>
+<h4 id="example-4"><a class="header" href="#example-4">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallnetworks-method"><a class="header" href="#getallnetworks-method"><code>GetAllNetworks</code> method</a></h3>
+<p>Returns a list of all the available networks.</p>
+<h4 id="parameters-46"><a class="header" href="#parameters-46">Parameters</a></h4>
+<ul>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-46"><a class="header" href="#returns-46">Returns</a></h4>
+<ul>
+<li><code>NetworkInfoList</code> - a list of available networks</li>
+</ul>
+<pre><code class="language-go">type NetworkInfoList struct {
+	Count int                       `json:&quot;count&quot;`
+	List  []*definition.NetworkInfo `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-5"><a class="header" href="#example-5">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="gettoken-method"><a class="header" href="#gettoken-method"><code>getToken</code> method</a></h3>
+<p>Returns a token by <code>tokenStandard</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-47"><a class="header" href="#parameters-47">Parameters</a></h4>
+<ul>
+<li><code>zts</code> - the Zenon Token Standard, in <code>ZenonTokenStandard</code> format</li>
+</ul>
+<h4 id="returns-47"><a class="header" href="#returns-47">Returns</a></h4>
+<ul>
+<li><code>Token</code> - the current token information</li>
+</ul>
+<pre><code class="language-go">type TokenInfo struct {
+	Owner       types.Address `json:&quot;owner&quot;`
+	TokenName   string        `json:&quot;tokenName&quot;`
+	TokenSymbol string        `json:&quot;tokenSymbol&quot;`
+	TokenDomain string        `json:&quot;tokenDomain&quot;`
+	TotalSupply *big.Int      `json:&quot;totalSupply&quot;`
+	MaxSupply   *big.Int      `json:&quot;maxSupply&quot;`
+	Decimals    uint8         `json:&quot;decimals&quot;`
+	IsMintable  bool          `json:&quot;isMintable&quot;`
+	// IsBurnable = true implies that anyone can burn the token.
+	// The Owner can burn the token even if IsBurnable = false.
+	IsBurnable bool `json:&quot;isBurnable&quot;`
+	IsUtility  bool `json:&quot;isUtility&quot;`
+
+	TokenStandard types.ZenonTokenStandard `json:&quot;tokenStandard&quot;`
+}
+</code></pre>
+<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getredeemablein-method"><a class="header" href="#getredeemablein-method"><code>getRedeemableIn</code> method</a></h3>
+<p>Returns the number of momentums until an <code>UnwrapTokenRequest</code> becomes redeemable.</p>
+<h4 id="parameters-48"><a class="header" href="#parameters-48">Parameters</a></h4>
+<ul>
+<li><code>unwrapTokenRequest</code> - the unwrap token request</li>
+<li><code>tokenPair</code> - the token pair</li>
+<li><code>momentum</code> - the momentum</li>
+</ul>
+<h4 id="returns-48"><a class="header" href="#returns-48">Returns</a></h4>
+<ul>
+<li><code>redeemableIn</code> - the number of momentums until an <code>UnwrapTokenRequest</code> becomes redeemable in <code>uint64</code> format</li>
+</ul>
+<pre><code class="language-go">var redeemableIn uint64
+</code></pre>
+<h4 id="example-7"><a class="header" href="#example-7">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getconfirmationstofinality-method"><a class="header" href="#getconfirmationstofinality-method"><code>getConfirmationsToFinality</code> method</a></h3>
+<p>Returns the number of confirmations to finality for a <code>WrapTokenRequest</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-49"><a class="header" href="#parameters-49">Parameters</a></h4>
+<ul>
+<li><code>wrapTokenRequest</code> - the wrap request for a particular token</li>
+<li><code>confirmationsToFinality</code> - the number of confirmations required to achieve finality in <code>uint32</code> format</li>
+<li><code>momentum</code> - the momentum</li>
+</ul>
+<h4 id="returns-49"><a class="header" href="#returns-49">Returns</a></h4>
+<ul>
+<li><code>actualConfirmationsToFinality</code> - the number of confirmations to achieve finality on the destination network in <code>uint64</code> format</li>
+</ul>
+<pre><code class="language-go">var actualConfirmationsToFinality uint64
+</code></pre>
+<h4 id="example-8"><a class="header" href="#example-8">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getwraptokenrequestbyid-method"><a class="header" href="#getwraptokenrequestbyid-method"><code>GetWrapTokenRequestById</code> method</a></h3>
+<p>Returns the token for the wrap request or <code>error</code> in case it fails.</p>
+<h4 id="parameters-50"><a class="header" href="#parameters-50">Parameters</a></h4>
+<ul>
+<li><code>id</code> - the hash of the wrap request, in <code>Hash</code> format</li>
+</ul>
+<h4 id="returns-50"><a class="header" href="#returns-50">Returns</a></h4>
+<ul>
+<li><code>wrapTokenRequest</code> - the wrap token request in <code>WrapTokenRequest</code> format</li>
+</ul>
+<pre><code class="language-go">type WrapTokenRequest struct {
+	*definition.WrapTokenRequest
+	TokenInfo               *api.Token `json:&quot;token&quot;`
+	ConfirmationsToFinality uint64     `json:&quot;confirmationsToFinality&quot;`
+}
+</code></pre>
+<h4 id="example-9"><a class="header" href="#example-9">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallwraptokenrequests-method"><a class="header" href="#getallwraptokenrequests-method"><code>GetAllWrapTokenRequests</code> method</a></h3>
+<p>Returns a list of tokens for all wrap requests or <code>error</code> in case it fails.</p>
+<h4 id="parameters-51"><a class="header" href="#parameters-51">Parameters</a></h4>
+<ul>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-51"><a class="header" href="#returns-51">Returns</a></h4>
+<ul>
+<li><code>wrapTokenRequestList</code> - a list of wrap token requests</li>
+</ul>
+<pre><code class="language-go">type WrapTokenRequestList struct {
+	Count int                 `json:&quot;count&quot;`
+	List  []*WrapTokenRequest `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-10"><a class="header" href="#example-10">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallwraptokenrequestsbytoaddress-method"><a class="header" href="#getallwraptokenrequestsbytoaddress-method"><code>GetAllWrapTokenRequestsByToAddress</code> method</a></h3>
+<p>Returns a list of wrap requests that match a particular address or <code>error</code> in case it fails.</p>
+<h4 id="parameters-52"><a class="header" href="#parameters-52">Parameters</a></h4>
+<ul>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+<li><code>toAddress</code> - the address in <code>string</code> format</li>
+</ul>
+<h4 id="returns-52"><a class="header" href="#returns-52">Returns</a></h4>
+<ul>
+<li><code>wrapTokenRequestList</code> - a list of wrap token requests</li>
+</ul>
+<pre><code class="language-go">type WrapTokenRequestList struct {
+	Count int                 `json:&quot;count&quot;`
+	List  []*WrapTokenRequest `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-11"><a class="header" href="#example-11">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallwraptokenrequestsbytoaddressnetworkclassandchainid-method"><a class="header" href="#getallwraptokenrequestsbytoaddressnetworkclassandchainid-method"><code>GetAllWrapTokenRequestsByToAddressNetworkClassAndChainId</code> method</a></h3>
+<p>Returns a list of wrap requests that match a particular address, network class and chain identifier.</p>
+<h4 id="parameters-53"><a class="header" href="#parameters-53">Parameters</a></h4>
+<ul>
+<li><code>toAddress</code> - the address in <code>string</code> format</li>
+<li><code>networkClass</code> - the network class</li>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-53"><a class="header" href="#returns-53">Returns</a></h4>
+<ul>
+<li><code>wrapTokenRequestList</code> - a list of wrap token requests</li>
+</ul>
+<pre><code class="language-go">type WrapTokenRequestList struct {
+	Count int                 `json:&quot;count&quot;`
+	List  []*WrapTokenRequest `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-12"><a class="header" href="#example-12">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallunsignedwraptokenrequests-method"><a class="header" href="#getallunsignedwraptokenrequests-method"><code>GetAllUnsignedWrapTokenRequests</code> method</a></h3>
+<p>Returns a list of unsigned wrap requests or <code>error</code> in case it fails.</p>
+<h4 id="parameters-54"><a class="header" href="#parameters-54">Parameters</a></h4>
+<ul>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-54"><a class="header" href="#returns-54">Returns</a></h4>
+<ul>
+<li><code>wrapTokenRequestList</code> - a list of unsigned wrap token requests</li>
+</ul>
+<h4 id="example-13"><a class="header" href="#example-13">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getunwraptokenrequestbyhashandlog-method"><a class="header" href="#getunwraptokenrequestbyhashandlog-method"><code>GetUnwrapTokenRequestByHashAndLog</code> method</a></h3>
+<p>Returns a list of unwrap token requests that match a particular <code>Hash</code> and <code>Log</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-55"><a class="header" href="#parameters-55">Parameters</a></h4>
+<ul>
+<li><code>txHash</code> - the transaction hash in <code>Hash</code> format</li>
+<li><code>logIndex</code> - the log index in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-55"><a class="header" href="#returns-55">Returns</a></h4>
+<ul>
+<li><code>unwrapTokenRequest</code> - the unwrap token request</li>
+</ul>
+<pre><code class="language-go">type UnwrapTokenRequest struct {
+	RegistrationMomentumHeight uint64                   `json:&quot;registrationMomentumHeight&quot;`
+	NetworkClass               uint32                   `json:&quot;networkClass&quot;`
+	ChainId                    uint32                   `json:&quot;chainId&quot;`
+	TransactionHash            types.Hash               `json:&quot;transactionHash&quot;`
+	LogIndex                   uint32                   `json:&quot;logIndex&quot;`
+	ToAddress                  types.Address            `json:&quot;toAddress&quot;`
+	TokenAddress               string                   `json:&quot;tokenAddress&quot;`
+	TokenStandard              types.ZenonTokenStandard `json:&quot;tokenStandard&quot;`
+	Amount                     *big.Int                 `json:&quot;amount&quot;`
+	Signature                  string                   `json:&quot;signature&quot;`
+	Redeemed                   uint8                    `json:&quot;redeemed&quot;`
+	Revoked                    uint8                    `json:&quot;revoked&quot;`
+}
+</code></pre>
+<h4 id="example-14"><a class="header" href="#example-14">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallunwraptokenrequests-method"><a class="header" href="#getallunwraptokenrequests-method"><code>GetAllUnwrapTokenRequests</code> method</a></h3>
+<p>Returns a list of all unwrap token requests or <code>error</code> in case it fails.</p>
+<h4 id="parameters-56"><a class="header" href="#parameters-56">Parameters</a></h4>
+<ul>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-56"><a class="header" href="#returns-56">Returns</a></h4>
+<ul>
+<li><code>unwrapTokenRequestList</code> - a list of unwrap token requests</li>
+</ul>
+<h4 id="example-15"><a class="header" href="#example-15">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getallunwraptokenrequestsbytoaddress-method"><a class="header" href="#getallunwraptokenrequestsbytoaddress-method"><code>GetAllUnwrapTokenRequestsByToAddress</code> method</a></h3>
+<p>Returns a list of all unwrap token requests that match a particular address.</p>
+<h4 id="parameters-57"><a class="header" href="#parameters-57">Parameters</a></h4>
+<ul>
+<li><code>toAddress</code> - the address in <code>string</code> format</li>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-57"><a class="header" href="#returns-57">Returns</a></h4>
+<ul>
+<li><code>unwrapTokenRequestList</code> - a list of unwrap token requests</li>
+</ul>
+<h4 id="example-16"><a class="header" href="#example-16">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getfeetokenpair-method"><a class="header" href="#getfeetokenpair-method"><code>GetFeeTokenPair</code> method</a></h3>
+<p>Returns the fee for a particular token pair or <code>error</code> in case it fails.</p>
+<h4 id="parameters-58"><a class="header" href="#parameters-58">Parameters</a></h4>
+<ul>
+<li><code>zts</code> - the Zenon Token Standard, in <code>ZenonTokenStandard</code> format</li>
+</ul>
+<h4 id="returns-58"><a class="header" href="#returns-58">Returns</a></h4>
+<ul>
+<li><code>ZtsFeesInfo</code> - ZTS fee information</li>
+</ul>
+<pre><code class="language-go">type ZtsFeesInfo struct {
+	TokenStandard  types.ZenonTokenStandard `json:&quot;tokenStandard&quot;`
+	AccumulatedFee *big.Int                 `json:&quot;accumulatedFee&quot;`
+}
+</code></pre>
+<h4 id="example-17"><a class="header" href="#example-17">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bridge-embedded-unit-tests"><a class="header" href="#bridge-embedded-unit-tests">Bridge Embedded Unit Tests</a></h1>
+<p>The unit tests are available <a href="https://github.com/HyperCore-Team/go-zenon/blob/embedded-bridge/vm/embedded/tests/z_bridge_test.go">here</a> with <code>81.8%</code> code coverage.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="orchestrator-layer"><a class="header" href="#orchestrator-layer">Orchestrator Layer</a></h1>
+<p>The purpose of the <strong>Orchestrator Layer</strong> is to assure the <em>off-chain communication</em> and <em>TSS signing</em> of wrap and unwrap requests for the integrated networks.</p>
+<h2 id="os-support"><a class="header" href="#os-support">OS support</a></h2>
+<p>Currently only Linux based operating systems are supported. This is due to the fact that Pillar nodes already running on public infrastructure have dedicated support for Linux based operating systems.</p>
+<div class="table-wrapper"><table><thead><tr><th>OS</th><th>Linux</th><th>Windows</th><th>MacOS</th></tr></thead><tbody>
+<tr><td></td><td>Yes</td><td>No</td><td>No</td></tr>
+</tbody></table>
+</div>
+<h2 id="data-directory"><a class="header" href="#data-directory">Data directory</a></h2>
+<ul>
+<li>
+<p><code>DefaultDataDir</code> is the default data directory for the orchestrator node located at <code>~/.orchestrator</code></p>
+</li>
+<li>
+<p><code>orchestrator</code> is executable file of the Orchestrator node</p>
+</li>
+<li>
+<p><code>config.json</code> is the configuration file</p>
+</li>
+</ul>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="producer-key"><a class="header" href="#producer-key">Producer key</a></h3>
+<p>The Pillar operator must set his <code>producer keyStore</code> in <code>~/.orchestrator</code> and provide the <code>name</code> and <code>passphrase</code> in <code>config.json</code></p>
+<p>After the first run, in <code>config.json</code>, from <code>producer key</code> an EVM address will automatically get generated and the field <code>evmAddress</code>  will be populated.</p>
+<p><strong>IMPORTANT</strong>: An <code>ETH</code> deposit is mandatory for the generated <code>evmAddress</code> that will be used as gas in case a <code>halt</code> transaction is necessary to be performed on-chain.</p>
+<h2 id="secrets"><a class="header" href="#secrets">Secrets</a></h2>
+<p><strong>IMPORTANT</strong>: The Pillar operator must backup the <code>~/.orchestrator/tss</code> folder containing the generated TSS shard in case a hardware failure occurs. Without it, the node can no longer participate in the <code>keysign</code> ceremonies, until it participates in another successful <code>keygen</code> ceremony.</p>
+<h2 id="ports"><a class="header" href="#ports">Ports</a></h2>
+<p>The default port is <code>55055</code>.</p>
+<p>If you start with the default ports, please make sure that they are not occupied by other programs or blocked by the firewall.</p>
+<pre><code class="language-bash">netstat -nlp | grep 55055 
+</code></pre>
+<h2 id="install-from-source"><a class="header" href="#install-from-source">Install from source</a></h2>
+<p><code>Go 1.20</code> or later is required. Check the <a href="https://go.dev">Go documentation</a> for more info.</p>
+<pre><code class="language-bash">go env
+</code></pre>
+<p>Build from source:</p>
+<pre><code class="language-bash">go build --ldflags '-extldflags &quot;-Wl,--allow-multiple-definition&quot;' -o ./orchestrator
+</code></pre>
+<p><code>orchestrator</code> service:</p>
+<pre><code class="language-bash">// todo
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="connectors"><a class="header" href="#connectors">Connectors</a></h1>
+<p>Each Orchestrator Node is connected to both NoM and the supported destination network using the <code>JSON-RPC API</code>. There are several types of connectors that provide different degrees of confidence for transaction finality.</p>
+<h2 id="local-connectors"><a class="header" href="#local-connectors">Local Connectors</a></h2>
+<h2 id="full-node"><a class="header" href="#full-node">Full Node</a></h2>
+<p>The ideal configuration for an Orchestrator Node is to run its own full nodes for all supported networks. This way, it has a precise overview of the network state and does not rely to any third party that can be either maliciously corrupted or censored. Running full nodes also can detect chain reorganizations called <code>reorgs</code>.</p>
+<p>Example of chain reorgs for a Bitcoin full node running continuously since 17 December 2016:</p>
+<ul>
+<li>Actual reorgs: 4 (1 every 84,352 blocks / 570.3 days)</li>
+<li>Avoided reorgs: 174 (1 every 1,939 blocks / 13.1 days)</li>
+</ul>
+<h2 id="light-node"><a class="header" href="#light-node">Light Node</a></h2>
+<p>Light Nodes decrease the load required to run a full node. Some implementations are better than others and if properly used can effectively displace the need for a full node.</p>
+<h2 id="remote-connectors"><a class="header" href="#remote-connectors">Remote Connectors</a></h2>
+<h3 id="decentralized-rpc-providers"><a class="header" href="#decentralized-rpc-providers">Decentralized RPC Providers</a></h3>
+<p>Decentralized RPC Providers:</p>
+<ul>
+<li><a href="https://www.ankr.com/">Ankr</a></li>
+<li><a href="https://www.pokt.network/">Pockt Network</a></li>
+</ul>
+<p>Decentralized RPC Providers should only be used for redundancy purposes.</p>
+<h3 id="centralized-rpc-providers"><a class="header" href="#centralized-rpc-providers">Centralized RPC Providers</a></h3>
+<p>Centralized RPC Providers:</p>
+<ul>
+<li>Infura</li>
+<li>Alchemy</li>
+<li>Quicknode</li>
+</ul>
+<p>Centralized RPC Providers should only be used for redundancy purposes.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="protocol-level-liquidity"><a class="header" href="#protocol-level-liquidity">Protocol Level Liquidity</a></h1>
+<p>The purpose of the <strong>Protocol Level Liquidity</strong> is to distribute dual-coin liquidity rewards in <code>ZNN</code> and <code>QSR</code> to eligible <em>Liquidity Providers</em>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidity-embedded-contract"><a class="header" href="#liquidity-embedded-contract">Liquidity Embedded Contract</a></h1>
+<p>The <strong>Liquidity Embedded Contract</strong> is the embedded contract for the <strong>Orbital Program</strong> deployed on the Network of Momentum.</p>
+<h2 id="contract-implementation-2"><a class="header" href="#contract-implementation-2">Contract implementation</a></h2>
+<p>The implementation of the <strong>Liquidity Embedded Contract</strong> has a total of 14 methods that can be called by sending a specifically crafted account block:</p>
+<h3 id="updateembeddedliquiditymethod-method"><a class="header" href="#updateembeddedliquiditymethod-method"><code>UpdateEmbeddedLiquidityMethod</code> method</a></h3>
+<p>Method for updating the embedded liquidity contract.</p>
+<h4 id="parameters-59"><a class="header" href="#parameters-59">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-59"><a class="header" href="#returns-59">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="settokentuplemethod-method"><a class="header" href="#settokentuplemethod-method"><code>SetTokenTupleMethod</code> method</a></h3>
+<p>Method for setting a token tuple and their corresponding reward percentages for the Orbital Program. Can only be set by the <code>administrator</code>.</p>
+<h4 id="parameters-60"><a class="header" href="#parameters-60">Parameters</a></h4>
+<ul>
+<li><code>TokenStandards</code> - an array containing the <code>ZTS</code> allowed for staking</li>
+<li><code>ZnnPercentages</code> - an array containing the <code>ZNN</code> percentage rewards for each <code>ZTS</code> in the <code>TokenStandards</code> array</li>
+<li><code>QsrPercentages</code> - an array containing the <code>QSR</code> percentage rewards for each <code>ZTS</code> in the <code>TokenStandards</code> array</li>
+<li><code>MinAmounts</code> - an array containing the minimum amounts for staking each <code>ZTS</code> in the <code>TokenStandards</code> array</li>
+</ul>
+<h4 id="returns-60"><a class="header" href="#returns-60">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="liquiditystakemethod-method"><a class="header" href="#liquiditystakemethod-method"><code>LiquidityStakeMethod</code> method</a></h3>
+<p>Method for staking the liquidity for the Orbital Program.</p>
+<h4 id="parameters-61"><a class="header" href="#parameters-61">Parameters</a></h4>
+<ul>
+<li><code>stakeTime</code> - stake time in seconds that should be a multiple of number in seconds for a month</li>
+<li><code>tokenStandard</code> - fetched from the send block</li>
+<li><code>amount</code> - fetched from the send block</li>
+</ul>
+<h4 id="returns-61"><a class="header" href="#returns-61">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="cancelliquiditystakemethod-method"><a class="header" href="#cancelliquiditystakemethod-method"><code>CancelLiquidityStakeMethod</code> method</a></h3>
+<p>Method for cancelling the liquidity stake for the Orbital Program.</p>
+<h4 id="parameters-62"><a class="header" href="#parameters-62">Parameters</a></h4>
+<ul>
+<li><code>id</code> - a hash that uniquely identifies the stake entry to be canceled</li>
+</ul>
+<h4 id="returns-62"><a class="header" href="#returns-62">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="updaterewardembeddedliquiditymethod-method"><a class="header" href="#updaterewardembeddedliquiditymethod-method"><code>UpdateRewardEmbeddedLiquidityMethod</code> method</a></h3>
+<p>Method to be called when the Liquidity Contract is updated. It contains the new mechanism for distributing dual-coin rewards.</p>
+<h4 id="parameters-63"><a class="header" href="#parameters-63">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-63"><a class="header" href="#returns-63">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setishalted-method"><a class="header" href="#setishalted-method"><code>SetIsHalted</code> method</a></h3>
+<p>Method for halting or unhalting the liquidity staking. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-64"><a class="header" href="#parameters-64">Parameters</a></h4>
+<ul>
+<li><code>bool</code> - <code>true</code> or <code>false</code></li>
+</ul>
+<h4 id="returns-64"><a class="header" href="#returns-64">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="unlockliquiditystakeentries-method"><a class="header" href="#unlockliquiditystakeentries-method"><code>UnlockLiquidityStakeEntries</code> method</a></h3>
+<p>Method for unlocking the liquidity staking entries for a <code>ZTS</code> that is no longer allowed for staking.</p>
+<h4 id="parameters-65"><a class="header" href="#parameters-65">Parameters</a></h4>
+<ul>
+<li><code>tokenStandard</code> - fetched from the send block</li>
+</ul>
+<h4 id="returns-65"><a class="header" href="#returns-65">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="setadditionalreward-method"><a class="header" href="#setadditionalreward-method"><code>SetAdditionalReward</code> method</a></h3>
+<p>Method for setting an additional reward for the liquidity staking. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-66"><a class="header" href="#parameters-66">Parameters</a></h4>
+<ul>
+<li><code>znnRewards</code> - additional <code>ZNN</code> rewards for the next epochs</li>
+<li><code>qsrRewards</code> - additional <code>QSR</code> rewards for the next epochs</li>
+</ul>
+<h4 id="returns-66"><a class="header" href="#returns-66">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="changeadministratorliquidity-method"><a class="header" href="#changeadministratorliquidity-method"><code>ChangeAdministratorLiquidity</code> method</a></h3>
+<p>Method for changing the <code>administrator</code> for the liquidity embedded contract. Can only be called by the <code>administrator</code>. Guarded by a time challenge.</p>
+<h4 id="parameters-67"><a class="header" href="#parameters-67">Parameters</a></h4>
+<ul>
+<li><code>address</code> - address of the <code>new</code> administrator</li>
+</ul>
+<h4 id="returns-67"><a class="header" href="#returns-67">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="nominateguardiansliquidity-method"><a class="header" href="#nominateguardiansliquidity-method"><code>NominateGuardiansLiquidity</code> method</a></h3>
+<p>Method for nominating the <code>guardians</code> for the liquidity embedded contract. Can only be called by the <code>Administrator</code>. Guarded by a time challenge.</p>
+<h4 id="parameters-68"><a class="header" href="#parameters-68">Parameters</a></h4>
+<ul>
+<li><code>[]address</code> - an array containing the new addresses</li>
+</ul>
+<h4 id="returns-68"><a class="header" href="#returns-68">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="proposeadministratorliquidity-method"><a class="header" href="#proposeadministratorliquidity-method"><code>ProposeAdministratorLiquidity</code> method</a></h3>
+<p>Method for proposing a new <code>administrator</code> for the liquidity embedded contract. Can only be called by a <code>guardian</code> if the embedded liquidity contract is in an emergency state.</p>
+<h4 id="parameters-69"><a class="header" href="#parameters-69">Parameters</a></h4>
+<ul>
+<li><code>address</code> - voted address</li>
+</ul>
+<h4 id="returns-69"><a class="header" href="#returns-69">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="emergencyliquidity-method"><a class="header" href="#emergencyliquidity-method"><code>EmergencyLiquidity</code> method</a></h3>
+<p>Method for putting the liquidity embedded contract into emergency mode. Can only be called by the <code>administrator</code>.</p>
+<h4 id="parameters-70"><a class="header" href="#parameters-70">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-70"><a class="header" href="#returns-70">Returns</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidity-embedded-json-rpc-api"><a class="header" href="#liquidity-embedded-json-rpc-api">Liquidity Embedded JSON-RPC API</a></h1>
+<p>The <code>JSON-RPC API</code> for the liquidity embedded contract.</p>
+<h2 id="json-rpc-api-methods-1"><a class="header" href="#json-rpc-api-methods-1">JSON-RPC API Methods</a></h2>
+<h3 id="getliquidityinfo-method"><a class="header" href="#getliquidityinfo-method"><code>GetLiquidityInfo</code> method</a></h3>
+<p>Returns the current liquidity information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-71"><a class="header" href="#parameters-71">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-71"><a class="header" href="#returns-71">Returns</a></h4>
+<ul>
+<li><code>LiquidityInfo</code> - the current bridge information</li>
+</ul>
+<pre><code class="language-go">type LiquidityInfo struct {
+	Administrator types.Address `json:&quot;administrator&quot;`
+	IsHalted      bool          `json:&quot;isHalted&quot;`
+	ZnnReward     *big.Int      `json:&quot;znnReward&quot;`
+	QsrReward     *big.Int      `json:&quot;qsrReward&quot;`
+	TokenTuples   []TokenTuple  `json:&quot;tokenTuples&quot;`
+}
+</code></pre>
+<h4 id="example-18"><a class="header" href="#example-18">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getsecurityinfo-method-1"><a class="header" href="#getsecurityinfo-method-1"><code>GetSecurityInfo</code> method</a></h3>
+<p>Returns the current security information or <code>error</code> in case it fails.</p>
+<h4 id="parameters-72"><a class="header" href="#parameters-72">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-72"><a class="header" href="#returns-72">Returns</a></h4>
+<ul>
+<li><code>SecurityInfoVariable</code> - the current security information</li>
+</ul>
+<pre><code class="language-go">// SecurityInfoVariable This refers to time challenge security
+type SecurityInfoVariable struct {
+	// addresses that can vote for the new administrator once the bridge is in emergency
+	Guardians []types.Address `json:&quot;guardians&quot;`
+	// votes of the active guardians
+	GuardiansVotes []types.Address `json:&quot;guardiansVotes&quot;`
+	// delay upon which the new administrator or guardians will be active
+	AdministratorDelay uint64 `json:&quot;administratorDelay&quot;`
+	// delay upon which all other time challenges will expire
+	SoftDelay uint64 `json:&quot;softDelay&quot;`
+}
+</code></pre>
+<h4 id="example-19"><a class="header" href="#example-19">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getliquiditystakeentriesbyaddress-method"><a class="header" href="#getliquiditystakeentriesbyaddress-method"><code>GetLiquidityStakeEntriesByAddress</code> method</a></h3>
+<p>Returns the current liquidity staking entries by <code>address</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-73"><a class="header" href="#parameters-73">Parameters</a></h4>
+<ul>
+<li><code>address</code> - the address in <code>Address</code> format</li>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-73"><a class="header" href="#returns-73">Returns</a></h4>
+<ul>
+<li><code>LiquidityStakeList</code> - the current liquidity staking list</li>
+</ul>
+<pre><code class="language-go">type LiquidityStakeList struct {
+	TotalAmount         *big.Int                          `json:&quot;totalAmount&quot;`
+	TotalWeightedAmount *big.Int                          `json:&quot;totalWeightedAmount&quot;`
+	Count               int                               `json:&quot;count&quot;`
+	Entries             []*definition.LiquidityStakeEntry `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-20"><a class="header" href="#example-20">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getuncollectedreward-method"><a class="header" href="#getuncollectedreward-method"><code>GetUncollectedReward</code> method</a></h3>
+<p>Returns the <code>RewardDeposit</code> for a particular <code>address</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-74"><a class="header" href="#parameters-74">Parameters</a></h4>
+<ul>
+<li><code>address</code> - the address in <code>Address</code> format</li>
+</ul>
+<h4 id="returns-74"><a class="header" href="#returns-74">Returns</a></h4>
+<ul>
+<li><code>RewardDeposit</code> - the current uncollected reward deposit</li>
+</ul>
+<pre><code class="language-go">type RewardDeposit struct {
+	Address *types.Address `json:&quot;address&quot;`
+	Znn     *big.Int       `json:&quot;znnAmount&quot;`
+	Qsr     *big.Int       `json:&quot;qsrAmount&quot;`
+}
+</code></pre>
+<h4 id="example-21"><a class="header" href="#example-21">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="getfrontierrewardbypage-method"><a class="header" href="#getfrontierrewardbypage-method"><code>GetFrontierRewardByPage</code> method</a></h3>
+<p>Returns the <code>RewardHistoryList</code> for a particular <code>address</code> or <code>error</code> in case it fails.</p>
+<h4 id="parameters-75"><a class="header" href="#parameters-75">Parameters</a></h4>
+<ul>
+<li><code>address</code> - the address in <code>Address</code> format</li>
+<li><code>pageIndex</code> - the page index in <code>uint32</code> format</li>
+<li><code>pageSize</code> - the size of the page in <code>uint32</code> format</li>
+</ul>
+<h4 id="returns-75"><a class="header" href="#returns-75">Returns</a></h4>
+<ul>
+<li><code>RewardHistoryList</code> - the current reward history list</li>
+</ul>
+<pre><code class="language-go">type RewardHistoryList struct {
+	Count int64                 `json:&quot;count&quot;`
+	List  []*RewardHistoryEntry `json:&quot;list&quot;`
+}
+</code></pre>
+<h4 id="example-22"><a class="header" href="#example-22">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<h3 id="gettimechallengesinfo-method-1"><a class="header" href="#gettimechallengesinfo-method-1"><code>GetTimeChallengesInfo</code> method</a></h3>
+<p>Returns a list of time challenges or <code>error</code> in case it fails.</p>
+<h4 id="parameters-76"><a class="header" href="#parameters-76">Parameters</a></h4>
+<ul>
+<li>None</li>
+</ul>
+<h4 id="returns-76"><a class="header" href="#returns-76">Returns</a></h4>
+<ul>
+<li><code>TimeChallengesList</code> - the current a list of time challenges</li>
+</ul>
+<pre><code class="language-go">type TimeChallengesList struct {
+	Count int                             `json:&quot;count&quot;`
+	List  []*definition.TimeChallengeInfo `json:&quot;list&quot;`
+}
+</code></pre>
+<pre><code class="language-go">type TimeChallengeInfo struct {
+	MethodName           string
+	ParamsHash           types.Hash
+	ChallengeStartHeight uint64
+}
+</code></pre>
+<h4 id="example-23"><a class="header" href="#example-23">Example</a></h4>
+<pre><code class="language-js">// todo
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidity-embedded-constants"><a class="header" href="#liquidity-embedded-constants">Liquidity Embedded Constants</a></h1>
+<p>Liquidity constants are hard coded into the <code>embedded.go</code> file as network constants.</p>
+<ul>
+<li>
+<p><code>LiquidityZnnTotalPercentages</code> represent the maximum sum for the <code>ZNN</code> percentage rewards of each allowed <code>ZTS</code></p>
+</li>
+<li>
+<p><code>LiquidityQsrTotalPercentages</code> represent the maximum sum for the <code>QSR</code> percentage rewards of each allowed <code>ZTS</code></p>
+</li>
+<li>
+<p><code>LiquidityStakeWeights</code> represent the liquidity staking weights depending on the number of months a user locks the liquidity</p>
+</li>
+</ul>
+<pre><code class="language-go">    LiquidityZnnTotalPercentages         uint32 = 10000
+    LiquidityQsrTotalPercentages         uint32 = 10000
+    LiquidityStakeWeights                       = []int64{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+    }
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidity-embedded-error-states"><a class="header" href="#liquidity-embedded-error-states">Liquidity Embedded Error States</a></h1>
+<p><a href="https://github.com/HyperCore-Team/go-zenon/blob/blob/vm/constants/errors">Liquidity error states</a>.</p>
+<pre><code class="language-go">ErrInvalidPercentages = errors.New(&quot;invalid percentages&quot;)
+ErrInvalidRewards     = errors.New(&quot;invalid liquidity stake rewards&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidity-embedded-unit-tests"><a class="header" href="#liquidity-embedded-unit-tests">Liquidity Embedded Unit Tests</a></h1>
+<p>The unit tests are available <a href="https://github.com/HyperCore-Team/go-zenon/blob/embedded-bridge/vm/embedded/tests/z_liquidity_test.go">here</a> with <code>74.5%</code> code coverage.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="license"><a class="header" href="#license">License</a></h1>
+<p>The implementation is fully <a href="https://github.com/HyperCore-Team">open source on Github</a> with a permissive licensing model - <code>GNU General Public License v3.0</code> to allow builders to develop a healthy middleware ecosystem for the Network of Momentum by integrate more networks.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="security"><a class="header" href="#security">Security</a></h1>
+<p>The philosophy underpinning the architecture is based on the <strong>Law of Action-Reaction</strong>. There can be no effect without a cause: every redeem transaction processed by the bridge must adhere to this causality principle. This means that funds must be <code>locked</code>/<code>burned</code> on the source network in order to be <code>redeemed</code> on the destination network.</p>
+<h2 id="time-challenge-security-primitive"><a class="header" href="#time-challenge-security-primitive">Time-challenge security primitive</a></h2>
+<p>Every sensitive action is split into <strong>two separate stages</strong> and is <strong>safeguarded</strong> by a <em>time-challenge security primitive</em>. This primitive is used throughout the codebase for every sensitive action that either involves moving funds or other critical actions.</p>
+<p>Additionally, the two step procedure is <strong>enforced</strong> in both <em>wrapping</em> or <em>unwrapping</em> assets:</p>
+<ol>
+<li>
+<p><strong>REQUEST</strong>: this action signals the intention of a user to wrap or unwrap his assets.</p>
+</li>
+<li>
+<p><strong>REDEEM</strong>: this action settles the user's request and actually delivers the swapped assets to its corresponding address.</p>
+</li>
+</ol>
+<p>After the redeem request is created, there is a <code>window</code> during which the funds are unredeemable. Also during this <code>window</code>, the orchestrator nodes will check if there is a corresponding transaction on the source network that <code>locks</code>/<code>burns</code> the funds. In case it doesn't exist, the orchestrator nodes will start the <em>halting process</em> of the bridge.</p>
+<h2 id="realtime-monitoring"><a class="header" href="#realtime-monitoring">Realtime Monitoring</a></h2>
+<p>The NoM Multi-chain infrastructure project expects all participants to develop and maintain their own security monitoring strategies. This expectation is based on the value of having heterogeneous monitoring strategies across the Guardian set as a function of Wormhole's defense in depth approach, increasing the likelihood of detecting fraudulent activity.</p>
+<p><strong>Pillar operators</strong> participating in the <strong>Orchestrator Layer</strong> (running orchestrator nodes) should aim to capture all of the following domains with their monitoring strategies:</p>
+<ul>
+<li>Orchestrator node monitoring: TSS ceremonies, peer-to-peer messages, logs, etc.</li>
+<li>Blockchain node monitoring: transaction activity, peer-to-peer messages, reorgs, logs, etc.</li>
+<li>Smart Contracts activity: on-chain state, emitted events, etc.</li>
+<li>Administrator Module activity: on-chain state</li>
+<li>Social media monitoring</li>
+<li>Bug bounty program</li>
+<li>Github security reporting</li>
+<li>Audit findings</li>
+<li><a href="https://forum.zenon.org">Forum</a> thread</li>
+</ul>
+<p>The orchestrator layer has a powerful built-in <a href="https://pkg.go.dev/go.uber.org/zap">logging</a> library.</p>
+<p>Lastly, if any user detects a security event via their monitoring system, they are urged to engage with the <code>Pillar operators</code> or the <code>admin</code> in order to activate the <code>emergency state</code>.</p>
+<h2 id="emergency-mode"><a class="header" href="#emergency-mode">Emergency Mode</a></h2>
+<p>The emergency mode for the decentralized bridge is designed to prevent any damage should a failure occurs.
+Only the administrator can put the bridge on each network in an emergency state.</p>
+<p>There are 4 possible states in total:</p>
+<pre><code class="language-go">LiveState      uint8 = 0
+KeyGenState    uint8 = 1
+HaltedState    uint8 = 2
+EmergencyState uint8 = 3
+</code></pre>
+<h2 id="distributed-halting-mechanism"><a class="header" href="#distributed-halting-mechanism">Distributed Halting Mechanism</a></h2>
+<p>The decentralized bridge has a built-in distributed halting mechanism that will halt it in case it observes an event on a destination network that has no corresponding event on the source network. 
+Concretely, redeem requests without lock/burn associated transactions will trigger a signing ceremony to halt the bridge on each network.
+Only the administrator and the orchestrator nodes can call the halting procedure via the dedicated halt method.</p>
+<h2 id="guardians-voting-system"><a class="header" href="#guardians-voting-system">Guardians Voting System</a></h2>
+<p>In the extreme case that the bridge is in emergency state the administrator address becomes <code>null</code>. A new administrator must be voted by the guardians in order to restore functionality.
+Once a voted address reaches a quorum of <code>50% + 1</code> votes out of the total number of guardians, it becomes the new administrator.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployed-contracts"><a class="header" href="#deployed-contracts">Deployed Contracts</a></h1>
+<p>Here you can find the addresses for the deployed core contracts on all the networks that the NoM Multi-chain Infrastructure supports, including testnet deployments.</p>
+<h2 id="mainnet-deployments"><a class="header" href="#mainnet-deployments">Mainnet Deployments</a></h2>
+<h3 id="mainnet-core-contracts"><a class="header" href="#mainnet-core-contracts">Mainnet Core Contracts</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Network name</th><th style="text-align: left">Network Class</th><th style="text-align: left">Chain ID</th><th style="text-align: left">Contract Address</th></tr></thead><tbody>
+<tr><td style="text-align: left">Network of Momentum</td><td style="text-align: left">1</td><td style="text-align: left">1</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">Ethereum</td><td style="text-align: left">2</td><td style="text-align: left">1</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Binance Smart Chain</td><td style="text-align: left">2</td><td style="text-align: left">56</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Avalanche (C-Chain)</td><td style="text-align: left">2</td><td style="text-align: left">43114</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Fantom</td><td style="text-align: left">2</td><td style="text-align: left">250</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Celo</td><td style="text-align: left">2</td><td style="text-align: left">42220</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Arbitrum</td><td style="text-align: left">2</td><td style="text-align: left">42161</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Polygon</td><td style="text-align: left">2</td><td style="text-align: left">137</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Optimism</td><td style="text-align: left">2</td><td style="text-align: left">10</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Bitcoin</td><td style="text-align: left">3</td><td style="text-align: left">N/A</td><td style="text-align: left">N/A</td></tr>
+<tr><td style="text-align: left">Litecoin</td><td style="text-align: left">3</td><td style="text-align: left">N/A</td><td style="text-align: left">N/A</td></tr>
+</tbody></table>
+</div>
+<h2 id="testnet-deployments"><a class="header" href="#testnet-deployments">Testnet Deployments</a></h2>
+<h3 id="testnet-core-contracts"><a class="header" href="#testnet-core-contracts">Testnet Core Contracts</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Network name</th><th style="text-align: left">Network Class</th><th style="text-align: left">Chain ID</th><th style="text-align: left">Contract Address</th></tr></thead><tbody>
+<tr><td style="text-align: left">Network of Momentum</td><td style="text-align: left">1</td><td style="text-align: left">1</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">Ethereum</td><td style="text-align: left">2</td><td style="text-align: left">1</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Binance Smart Chain</td><td style="text-align: left">2</td><td style="text-align: left">56</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Avalanche (C-Chain)</td><td style="text-align: left">2</td><td style="text-align: left">43114</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Fantom</td><td style="text-align: left">2</td><td style="text-align: left">250</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Celo</td><td style="text-align: left">2</td><td style="text-align: left">42220</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Arbitrum</td><td style="text-align: left">2</td><td style="text-align: left">42161</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Polygon</td><td style="text-align: left">2</td><td style="text-align: left">137</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Optimism</td><td style="text-align: left">2</td><td style="text-align: left">10</td><td style="text-align: left">TBA</td></tr>
+<tr><td style="text-align: left">Bitcoin</td><td style="text-align: left">3</td><td style="text-align: left">N/A</td><td style="text-align: left">N/A</td></tr>
+<tr><td style="text-align: left">Litecoin</td><td style="text-align: left">3</td><td style="text-align: left">N/A</td><td style="text-align: left">N/A</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="audits"><a class="header" href="#audits">Audits</a></h1>
+<p>The core components of the NoM multi-chain infrastructure (<em>go-tss</em> and <em>tss-lib</em> libraries) are properly audited are are used in production by high ranking cryptocurrencies like <a href="https://thorchain.org/">Thorchain</a>.</p>
+<ul>
+<li>Thorchain <a href="https://github.com/thorchain/Resources/tree/master/Audits">go-tss</a></li>
+<li>Binance <a href="https://github.com/bnb-chain/tss-lib/releases/download/v1.0.0/audit-binance-tss-lib-final-20191018.pdf">tss-lib</a></li>
+<li>IPFS libp2p <a href="https://docs.libp2p.io/concepts/security/security-considerations">security considerations</a> and <a href="https://docs.libp2p.io/concepts/security/dos-mitigation/">Denial of Service mitigation strategies</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="references"><a class="header" href="#references">References</a></h1>
+<ol>
+<li>
+<p><a href="https://medium.com/@zenon.network/orbital-program-protocol-level-liquidity-2f9567830105">Orbital Program</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@zenon.network/hyperspace-x-accelerator-z-towards-a-dao-of-daos-38dfad496365">Hyperspace interoperability: cross-chain bridge</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
